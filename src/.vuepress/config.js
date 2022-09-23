@@ -1,71 +1,86 @@
 module.exports = {
-  title: 'Octopus Documentation',
-  theme: 'reco',
-  plugins: [
-    ['@dovyp/vuepress-plugin-clipboard-copy', true]
-  ],
+  title: "Octopus Documentation",
+  theme: "reco",
+  plugins: [["@dovyp/vuepress-plugin-clipboard-copy", true]],
 
-  base: process.env.BASE_PATH || '/',
-  dest: './dist',
+  base: process.env.BASE_PATH || "/",
+  dest: "./dist",
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ["link", { rel: "icon", href: "/favicon.ico" }],
     [
-      'meta',
+      "meta",
       {
-        name: 'viewport',
-        content: 'width=device-width,initial-scale=1,user-scalable=no'
-      }
-    ]
+        name: "viewport",
+        content: "width=device-width,initial-scale=1,user-scalable=no",
+      },
+    ],
   ],
 
   locales: {
-    '/': {
-      lang: 'en-US'
+    "/": {
+      lang: "en-US",
     },
-    '/cn/': {
-      lang: 'zh-CN'
-    }
+    "/cn/": {
+      lang: "zh-CN",
+    },
+    "/pt/": {
+      lang: "pt-BR",
+    },
   },
 
   themeConfig: {
-    logo: '/logo-blue.png',
+    logo: "/logo-blue.png",
     lastUpdated: true,
     editLinks: false,
-    sidebar: 'auto',
+    sidebar: "auto",
 
-    author: 'Octopus Team',
-    repo: 'https://github.com/octopus-network/octopus-docs.git',
+    author: "Octopus Team",
+    repo: "https://github.com/octopus-network/octopus-docs.git",
 
     locales: {
-      '/': {
-        label: 'English',
+      "/": {
+        label: "English",
         nav: [
           {
-            text: 'Official Home',
-            link: 'https://oct.network/',
-            target: '_self',
-            rel: '',
-            icon: 'reco-home'
+            text: "Official Home",
+            link: "https://oct.network/",
+            target: "_self",
+            rel: "",
+            icon: "reco-home",
           },
-          { text: 'Index', link: '/' }
+          { text: "Index", link: "/" },
         ],
-        sidebar: require('./config/sidebar-en')
+        sidebar: require("./config/sidebar-en"),
       },
-      '/cn/': {
-        label: '简体中文',
+      "/cn/": {
+        label: "简体中文",
         nav: [
           {
-            text: '主页',
-            link: 'https://oct.network/',
-            target: '_self',
-            rel: '',
-            icon: 'reco-home'
+            text: "主页",
+            link: "https://oct.network/",
+            target: "_self",
+            rel: "",
+            icon: "reco-home",
           },
-          { text: '首页', link: '/cn/', icon: '' }
+          { text: "首页", link: "/cn/", icon: "" },
         ],
-        sidebar: require('./config/sidebar-zh')
-      }
-    }
-  }
-};
+        sidebar: require("./config/sidebar-zh"),
+      },
+      "/pt/": {
+        label: "Português",
+        nav: [
+          {
+            text: "Site Oficial",
+            link: "https://oct.network/",
+            target: "_self",
+            rel: "",
+            icon: "reco-home",
+          },
+          { text: "Índice", link: "/pt/", icon: "" },
+        ],
+        sidebar: require("./config/sidebar-pt"),
+      },
+    },
+  },
+}

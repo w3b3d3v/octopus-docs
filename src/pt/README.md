@@ -1,6 +1,6 @@
 # Documentação Octopus
 
-* [General](./general/octopus-overview.md)
+* [Geral](./general/octopus-overview.md)
     * [Visão Geral da Rede Octopus](./general/octopus-overview.md)
     * [Infra-estrutura da Rede Octopus](./general/infrastructure.md)
     * [Staking na Rede Octopus](./general/octopus-staking.md)

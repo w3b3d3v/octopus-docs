@@ -1,4 +1,4 @@
-## Appchain Startup
+## Iniciando a Appchain
 
 ![Appchain_Pipeline](../images/guides/appchain_pipeline.png)
 

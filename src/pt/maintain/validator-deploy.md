@@ -2,9 +2,9 @@
 
 Para simplificar a implantação do nó validador, a equipe da Octopus Network fornece um serviço de implantação automática para o nó validador. Atualmente, ele suporta: 
 
-* [AWS](https://docs.oct.network/maintain/validator-deploy-aws.html)
+* [AWS](validator-deploy-aws.md)
 
-* [Digital Ocean](https://docs.oct.network/maintain/validator-deploy-do.html) 
+* [Digital Ocean](validator-deploy-do.md) 
 
 Além disso, o validador pode optar por [implantar manualmente o nó validador](./validator-deploy-manually.md).
 

@@ -1,6 +1,6 @@
 # Guias do Desenvolvedor
 
-Antes de entrar no desenvolvimento, supõe-se que você tenha um entendimento da [Octopus Network](https://oct.network/) e da [arquitetura global](https://docs.oct.network/general/octopus-overview.html#octopus-network-overview) da Octopus Network.
+Antes de entrar no desenvolvimento, supõe-se que você tenha um entendimento da [Octopus Network](https://oct.network/) e da [arquitetura global](../general/octopus-overview.md) da Octopus Network.
 
 
 ## Desenvolver e Testar
@@ -24,7 +24,7 @@ Desenvolva a Appchain baseada no template Barnacle
 
 
 
-* [Tempo de execução de desenvolvimento](https://docs.oct.network/guides/appchain-develop.html#implement-appchain-runtime)
+* [Tempo de execução de desenvolvimento](appchain-develop.md)
 * [Construção do Substrate ](https://docs.substrate.io/main-docs/build/)
 * [Palete Substrate ](https://docs.substrate.io/tutorials/work-with-pallets/)
 
@@ -32,27 +32,27 @@ Desenvolva a Appchain baseada no template EVM Barnacle
 
 
 
-* [Appchain EVM](https://docs.oct.network/guides/appchain-evm.html#appchain-evm-compatible)
+* [Appchain EVM](appchain-evm.md)
 * [Desenvoler a DApp](https://docs.moonbeam.network/builders/build/eth-api/)
 
 ## Lançar a Testnet e Desenvolver a Mainnet
 
 
-Após concluir o desenvolvimento da Appchain, por favor, familiarize-se com o [Processo de lançamento da Appchain ](https://docs.oct.network/guides/appchain-startup.html), e então, entre em contato com o time Octopus para lançar a Testnet.
+Após concluir o desenvolvimento da Appchain, por favor, familiarize-se com o [Processo de lançamento da Appchain ](appchain-startup.md), e então, entre em contato com o time Octopus para lançar a Testnet.
 
 
 
-* [Registrar](https://docs.oct.network/guides/appchain-register.html#appchain-register)
-* [Auditar](https://github.com/paulo-gio/octopus-docs/blob/main/Developer%20Guides)
-* [Votar](https://docs.oct.network/guides/voting-appchain.html#voting-for-appchain)
-* [Inicializar](https://docs.oct.network/guides/appchain-startup.html#appchain-booting-process)
+* [Registrar](appchain-register.md)
+* [Auditar](https://github.com/octopus-network/octopus-docs/tree/main/src/guides)
+* [Votar](voting-appchain.md)
+* [Inicializar](appchain-startup.md)
 
 >O processo de lançamento da Mainnet é o mesmo que o da Testnet.
 
 
 ## Atualizar e Manter
 
-[Atualizar a Appchain ](https://docs.oct.network/guides/appchain-upgrade.html#appchain-upgrade)
+[Atualizar a Appchain ](appchain-upgrade.md)
 
 
 ## Segurança
@@ -61,9 +61,9 @@ Na Octopus Network, os proprietários de OCT podem fazer stake de OCTs para se t
 
 
 
-* [LPoS da Octopus Network ](https://docs.oct.network/general/octopus-staking.html#octopus-network-staking)
-* [Guia do Validador](https://docs.oct.network/maintain/validator-guide.html)
-* [Guia do Delegante](https://docs.oct.network/maintain/delegator-delegate.html)
+* [LPoS da Octopus Network ](../general/octopus-staking.md)
+* [Guia do Validador](../maintain/validator-guide.md)
+* [Guia do Delegante](../maintain/delegator-delegate.md)
 
 Nós validadores
 

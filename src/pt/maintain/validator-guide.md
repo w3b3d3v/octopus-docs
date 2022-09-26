@@ -1,12 +1,13 @@
-## 验证人指南
+## Guia do Validador
 
-> **友情提示**
-> 在运行验证节点之前，确保能够处理节点的问题和异常。如果节点出现问题，验证人及其委托人都将无法获得质押奖励。
+> **Nota**:
+> Antes de executar um nó validador, certifique-se de que você possa lidar com problemas e exceções do nó. Se houver um problema com o nó, tanto o validador quanto seus delegantes não poderão receber recompensas de staking.
 
-在章鱼网络中运行应用链的验证人节点，需完成以下步骤：
+Para executar um nó validador de appchain na rede Octopus, você precisa concluir as seguintes etapas:
 
-1. [生成验证人帐户](./validator-generate-keys.md)
-2. [部署验证节点](./validator-deploy.md)
-3. [注册验证人](./validator-register.md)
+1. [Gerar conta do validador](./validator-generate-keys.md)
+2. [Implantar nó validador](./validator-deploy.md)
+3. [Validador de registro](./validator-register.md)
 
-如果您需要帮助，请前往 [Discord](https://discord.gg/6GTJBkZA9Q) 上的**VALIDATORS**分类下的**validator-中文**频道。团队和其他验证人会帮助回答问题并分享经验。
+Se precisar de ajuda, acesse o canal de **assistência do validador** na categoria **VALIDATORS** no [Discord](https://discord.gg/6GTJBkZA9Q). A equipe e outros validadores responderiam a perguntas e compartilhariam experiências.
+

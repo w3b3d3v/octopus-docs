@@ -1,87 +1,97 @@
-## 注册验证人
+## Validador de registro
 
-注册应用链的验证人，需要完成注册验证人和设置 Session Key 的操作。
 
-### 注册验证人
+Para registrar o validador da appchain, o validador precisa concluir as operações de registro do validador e configuração da Session Key.
 
-在应用链页面 **My Node** 区域，点击`Register Validator`。在弹出页面中输入：
+### Validador de registro
 
-* `Appchain Account`，验证人的应用链账号，是在[生成验证人帐户](./validator-generate-keys.md)步骤中生成的地址。
-* `Deposit Amount`，验证人质押的 OCT 数量；
-* `Email`，验证人的联系邮箱；
-* `Twitter ID`，验证人的 Twitter 帐号;
-* `Accept delegation`，选择验证人节点是否接受[委托人委托](./delegator-delegate.md)；
+Clique em `Register Validator` na área  **My Node** da página appchain e insira os campos abaixo na página pop-up:
+
+
+* `Appchain Account`, a conta appchain do validador, que é o endereço gerado na etapa [Generate Validator Account](./validator-generate-keys.md).
+* `Deposit Amount`, a quantidade de OCT em staking pelo validador;
+* `Email`, o e-mail de contato do validador;
+* `Twitter ID`, a conta do Twitter do validador;
+* `Accept delegation`, selecione se o nó validador aceita [ delegação de delegante](./delegator-delegate.md);
     
-点击`Register`。
+Clique em `Register`.
 
-![validator register](../../images/maintain/validator_register.jpg)
+![validator register](https://docs.oct.network/assets/img/validator_register.50251ee7.jpg)
 
-注册成功后，请等待大约1～2分钟，验证人的应用链账户中会收到 1 个应用链的代币，用于进行下一步的操作。
+Após o registro bem-sucedido, aguarde cerca de 1 a 2 minutos e a conta da appchain do validador receberá um token nativo da appchain que será usado na próxima etapa.
 
-### 设置 Session Key
+### Definir chave de sessão
 
-**注意**，确保验证节点已完成链数据的同步，并且验证人的应用链账户中已收到应用链的代币。
+**Nota**: Certifique-se de que o nó do validador concluiu a sincronização dos dados da cadeia e que a conta da appchain do validador recebeu o token nativo da appchain.
 
-在应用链页面 **My Node** 区域，点击`···`，选择`Set Session Key`，在弹出页面中，选择上一步注册中填写的应用链账户，使用自动部署服务，验证人只需点击`Set`。
+Clique em `...` na área **My Node**  da página da appchain, selecione `Set Session Key`, e na página pop-up, selecione a conta da appchain preenchida no cadastro.
 
-![validator set sessionkey](../../images/maintain/validator_set_sessionkey.jpg)
+Para o validador implantado automaticamente, clique em `Set`.
 
-![validator set sessionkey](../../images/maintain/validator_set_sessionkey2.jpg)
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey.40c8a998.jpg)
 
-手动部署，验证人需要在`Session key`输入框中输入`author_rotateKeys`操作中输出的`result`字段的内容；
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey2.3657ceff.jpg)
 
-![validator set sessionkey](../../images/maintain/validator_set_sessionkey1.jpg)
+Para o validador implantado manualmente, por favor, insira o conteúdo da saída do campo `result` na operação `author_rotateKeys` na caixa de entrada `Session key`;
 
-![validator set sessionkey](../../images/maintain/validator_set_sessionkey3.jpg)
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey1.93a8b38a.jpg)
 
-设置成功后，并且验证节点正常运行，等待一个奖励周期大约 1 天，它将会进入新一轮的验证人集合中。
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey3.d96025ad.jpg)
 
-#### 检查 Session key
+O validador será adicionado à próxima rodada de conjuntos de validadores após aguardar um ciclo de recompensa (~ 1 dia).
 
-可以通过 PolkadotJS-Apps 检查会话密钥是否设置正确，配置 Apps 的`自定义终端`，应用链的 RPC Endpoit 可以从该应用链在章鱼网络[主网](https://mainnet.oct.network)页面获得。
+### Verificar chave de sessão
 
-连接到应用链后导航到`开发者`选项，选择`链状态`，选择`session > nextKeys(AccountId32)`选项，选择验证节点使用的验证人账户，点击`+`。
 
-![check session keys](../../images/maintain/validator_check_session_keys.jpg)
+Abra o [aplicativo PolkadotJS](https://polkadot.js.org/apps/),  o validador pode configurar o  `custom endpoint` com a Appchain RPC Endpoint.
 
-检查返回值是否和设置的 Session Key 一致。
+![RPC Endpoit](https://docs.oct.network/assets/img/appchain_rpc.8d36385a.jpg)
 
-### 领取质押奖励
+Depois de garantir que você se conectou a appchain RPC endpoint, navegue até a guia  `Developer` e selecione `Chain State` em seguida, selecione a opção  `session > nextKeys(AccountId32)` selecione sua conta de validador e clique em `+`. 
 
-在一个奖励周期大约 1 天后，验证人将会获得质押奖励，需要手动领取。在 **My Staking** 区域，点击**Rewards**，在`Validator Reward`列表页面中，点击`Claim`按钮领取奖励。
+![check session keys](https://docs.oct.network/assets/img/validator_check_session_keys.d95d101c.jpg)
 
-![validator claim rewards](../../images/maintain/validator_claim_rewards.jpg)
+Verifique se o valor de retorno é consistente com as chaves de sessão que você definiu.
 
-### 停止验证
 
-停止验证需要完成解除质押和停止验证节点两步操作。
+### Reivindicar recompensas
 
-### 解除质押
+Após um ciclo de recompensa (~ 1 dia), o validador receberá a recompensa de staking, que precisa ser reivindicada manualmente. Na área **My Staking**, clique em **Rewards**, então selecione  `Validator Reward` e clique no botão `Claim` para reivindicar a recompensa.
 
-在验证人列表中选择验证人，点击`Manage`打开`Validator Profile`页面。
 
-![validator manage](../../images/maintain/validator_manage.jpg)
+![validator claim rewards](https://docs.oct.network/assets/img/validator_claim_rewards.90aa4795.jpg)
 
-在`Validator Profile`页面中，点击`Unbond Validator`按钮执行解除质押操作。
 
-![validator unbond](../../images/maintain/validator_unbond.jpg)
+### Parar de validar
 
-> **注意**：解除质押操作后，质押的 OCT 有一个解绑期，在解绑期结束之前，无法提现，并且也不会获得任何质押奖励。
+Para parar de validar, é necessário desvincular o staking e parar o nó validador.
 
-### 停止验证节点
+### Desvincular Staking
 
-对于通过自动部署服务部署的验证节点，验证人可以点击 **My Node** 区域中的 `Destory` 按钮停止验证节点并删除自动部署的实例。
+Clique em  `Manage` para abrir a página `Validator Profile`.
 
-手动部署的验证节点，验证人请记得停掉它。
+![validator unbond](https://docs.oct.network/assets/img/validator_manage.76c26e0e.jpg)
 
-> **注意**：解除质押后，如果验证人立即停止验证节点，将没有最后一个质押周期的奖励。如果在一个奖励周期后停止它，则仍可以获得奖励。
+Clique no botão `Unbond Validator` na página `Validator Profile` para realizar a operação de retirada do staking.
 
-### 提现质押的 OCT
+![unbond withdraw](https://docs.oct.network/assets/img/validator_unbond.f2b36239.jpg)
 
-在应用链的 **My Staking** 区域，点击`···`，选择`Withdraw Stakes`。
+>**Nota**: Após a desvinculação, o OCT em staking terá um período de desvinculação. Antes do término do período de desvinculação, ele não pode ser retirado e você não obterá nenhuma recompensa de staking.
 
-![unbond withdraw](../../images/maintain/unbond_withdraw.jpg)
+### Pare o nó validador
 
-解绑期结束后，可以点击`Withdraw`提现质押的 OCT。
+Para o nó que foi implantado por meio do serviço de implantação automática, o validador pode clicar no botão `Destory` na área **My node** para interromper o nó validador e excluir a instância de implantação automática.
 
-![withdraw stakes](../../images/maintain/withdraw_stakes.jpg)
+Para o nó que foi implantado manualmente, lembre-se de interrompê-lo.
+
+>**Nota**: Após a desvinculação, se parar o nó imediatamente, o validador não terá recompensas para o último ciclo de recompensas. Se parar após um ciclo de recompensa, o validador ainda terá as recompensas.
+
+### Retirar OCT do staking
+
+Clique em `...` e selecione `Withdraw Stakes`  na área **My Staking**.
+
+![unbond withdraw](https://docs.oct.network/assets/img/unbond_withdraw.6816eac7.jpg)
+
+Após o término do período de desvinculação, você pode clicar no botão `Withdraw` para retirar o OCT do staking.
+
+![withdraw stakes](https://docs.oct.network/assets/img/withdraw_stakes.12c81f01.jpg)

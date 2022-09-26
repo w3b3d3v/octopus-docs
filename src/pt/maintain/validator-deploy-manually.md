@@ -1,17 +1,17 @@
-## 手动部署验证节点
+## Manually Deploy Validator Node
 
-手动部署应用链的验证节点，可以选择自己喜欢的 VPS 供应商，一般使用 **Ubuntu**操作系统。 需完成以下步骤：
+To manually deploy the validator node of the appchain, the validator can choose their favorite VPS provider, and generally using the **Ubuntu** operating system.
 
-1. 安装 Rust
-2. 安装依赖项
-3. 获取应用链的节点二进制文件
-4. 启动应用链的节点
+The following steps are required:
 
-### 1.安装 Rust
+1. Install Rust
+2. Install Dependencies
+3. Get the appchain Node
+4. Run the appchain node
 
-如果服务器的系统没有安装 Rust，则首先要进行安装。
+### 1. Install Rust
 
-下面这个命令可以下载安装最新版本的 Rust。
+If you have never installed Rust, you should do this first. This command will fetch the latest version of Rust and install it.
 
 ```bash
 # Install
@@ -20,7 +20,7 @@ curl https://sh.rustup.rs -sSf | sh
 source ~/.cargo/env
 ```
 
-如果已经安装了 Rust，则配置 Rust 工具链默认为最新的稳定版本，添加 nightly 和 nightly wasm 编译目标。
+If you have already installed Rust, run the following command to make sure you are using the latest version.
 
 ```bash
 rustup default stable
@@ -29,9 +29,9 @@ rustup update nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 
-### 2. 安装依赖项
+### 2. Install Dependencies
 
-首先安装一些必要的依赖项，以便编译和运行应用链的节点，运行下面的命令。
+Run this command to install the necessary dependencies for compiling and running the substrate-based Appchain node software.
 
 ```bash
 sudo apt update
@@ -39,9 +39,9 @@ sudo apt update
 sudo apt install make clang pkg-config libssl-dev build-essential
 ```
 
-### 3. 获取应用链的节点二进制文件
+### 3. Get the appchain node
 
-可以从应用链的源代码仓库中，编译源码生成应用链的节点二进制文件。
+You can generate the appchain node by compiling the source code from the appchain repository. Please refer to the following command:
 
 ```bash
 git clone <Appchain GitHub Repo>
@@ -49,16 +49,17 @@ cd <Appchain>
 cargo build --release
 ```
 
-> `<Appchain GitHub Repo>`，在应用链页面的`Github`图标获取
-> `<Appchain>`，应用链仓库的名称
+> `<Appchain GitHub Repo>`, the GitHub repository of appchain, navigate to it by clicking the `Github` icon on the appchain page
+>
+> `<Appchain>`, the name of the appchain repository
 
-编译完成后，在目录 `./target/release/` 下会生成应用链的节点二进制文件。这一步骤将需要一段时间，大约为10~40分钟，取决于服务器的硬件配置。
+After the compilation ends, the appchain node will be generated in the directory `./target/release/`. This step will take a while (10~40 minutes), depending on the hardware configuration of the server.
 
-> 备注：如果遇到编译错误，可能需要将 Rust 切换到一个较新的 nightly 版本。
+> Note: If it has the compiling errors, you may have to switch to a more recent nightly version of Rust.
 
-### 4. 启动应用链的节点
+### 4. Run the validator node
 
-启动应用链节点的参考命令如下：
+Run the validator node, please refer to the following command:
 
 ```bash
 ./target/release/<Appchain node> \
@@ -70,10 +71,11 @@ cargo build --release
 --enable-offchain-indexing true
 ```
 
-> `<Appchain node>`，上一步编译生成的节点二进制文件
-> `<Your validator name>`，验证节点的名称
+> `<Appchain node>`, the generated node in the previous step
+>
+> `<Your validator name>`，the name of the validator node
 
-检查节点是否已完成链数据的同步，查看节点的日志，是否有类似的输出如下：
+You can check whether the validator node complete the synchronization of the chain data, check the log whether there is an similar output as the following:
 
 ```bash
 2021-09-21 00:12:09 ✨ Imported #54411 (0x3566…3b0e)
@@ -85,12 +87,12 @@ cargo build --release
 2021-09-21 00:13:18 💤 Idle (6 peers), best: #54434 (0xba36…ee68), finalized #54431 (0xd194…b319), ⬇ 22.0kiB/s ⬆ 21.9kiB/s
 ```
 
-等待节点同步完成后，此时需要[生成验证节点 Session Key](validator-set-session-keys.md)，以供下一步[注册验证人](./validator-register.md)使用。
+After the node synchronization, the validator needs to [generate the Session Key](./validator-set-session-keys.md) for the next step [register validator](./validator-register.md).
 
-### 升级验证节点
+### Upgrade Validator Node
 
-应用链客户端节点发布新的版本后，验证人需要升级其验证节点。请定期关注章鱼网络 Discord 的**validators-delegators**频道，章鱼网络团队会发布应用链节点新版本的信息，验证人需要：
+When the appchain releases a new version of node, validators need to upgrade their validator node. Please follow the **validators-delegators** channel on Discord, the Octopus Network team will publish information about the new version of the appchain node. The validator need to:
 
-1. 编译新版本的应用链源码，生成新的应用链客户端；
-2. 停掉升级前的验证节点；
-3. 用新的应用链客户端启动验证节点。
+1. Compile the new version of appchain source code to generate a new appchain node;
+2. Stop the validator node before the upgrade;
+3. Launch the validator node with the new appchain node.

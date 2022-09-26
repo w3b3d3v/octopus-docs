@@ -1,39 +1,40 @@
-## 委托人操作
+## Operações do delegante
 
-委托人委托后，选择已委托的验证人，点击`Delegated`打开`Validator Profile`页面。
+Após a delegação, o delegante poderia selecionar o validador delegado e clicar em `Delegated` para abrir a página `Validator Profile`.
 
-![delegator delegated](../../images/maintain/delegator_delegated.jpg)
+![delegator delegated](https://docs.oct.network/assets/img/delegator_delegated.bbf68ab0.jpg)
 
-可以进行以下操作：
+O delegante pode fazer as operações abaixo na página `Validator Profile`.
 
-* 增加/减少质押量
-* 领取质押奖励
-* 解除委托
+* Aumentar/diminuir delegação
+* Reivindicar recompensas
+* Delegação de desvinculação
 
-### 增加/减少质押量
+### Aumentar/diminuir delegação
 
-在`Validator Profile`页面中，点击`+`或者`-`，可以增加或者减少质押量。
+Clique em `+` ou `-` para aumentar ou diminuir a quantidade de delegação na página `Validator Profile`.
 
-### 领取质押奖励
+### Reivindicar recompensas
 
-在委托质押一个奖励周期大约 1 天后，委托人将会获得质押奖励，需要手动领取。在`Validator Profile`页面中，点击`Rewards`按钮，选择`Delegator Reward`，然后点击`Claim`领取质押奖励。
 
-![delegator claim reward](../../images/maintain/delegator_claim_rewards.jpg)
+Após um ciclo de recompensa (~ 1 dia), o delegante obterá as recompensas de staking, que precisam ser reivindicadas manualmente. Clique no botão `Rewards`  na página `Validator Profile`,  selecione `Delegator Reward` e clique em  `Claim` para reivindicar as recompensas.
 
-### 解除委托
+![delegator claim reward](https://docs.oct.network/assets/img/delegator_claim_rewards.f6ccc0c5.jpg)
 
-如果打算解除委托，在`Validator Profile`页面中，点击`Unbond Delegation`按钮执行解除委托质押操作。
+### Delegação de desvinculação
 
-> **注意**，解除委托后，质押的 OCT 有一个解绑期，在解绑期结束之前，无法提现，并且也不会获得任何质押奖励。
+Clique no botão `Unbond Delegation` na página `Validator Profile` para realizar a operação de delegação de desvinculação.
 
-![delegator unbond](../../images/maintain/delegator_unbond.jpg)
+> **Nota**: Após a delegação de desvinculação, o OCT em staking terá um período de desvinculação. Antes do término do período de desvinculação, ele não pode ser retirado e você não obterá nenhuma recompensa de staking.
 
-### 提现质押的 OCT
+![delegator unbond](https://docs.oct.network/assets/img/delegator_unbond.0e6ab068.jpg)
 
-与验证人相同，在应用链的 **My Staking** 区域，点击`···`，选择`Withdraw Stakes`。
+### Retirada de OCT em staking
 
-![unbond withdraw](../../images/maintain/unbond_withdraw.jpg)
+É o mesmo que o validador. Clique em `...` e selecione `Withdraw Stakes` na área **My Staking**.
 
-解绑期结束后，可以点击`Withdraw`提现质押的 OCT。
+![unbond withdraw](https://docs.oct.network/assets/img/unbond_withdraw.6816eac7.jpg)
 
-![withdraw stakes](../../images/maintain/withdraw_stakes.jpg)
+Após o término do período de desvinculação, você pode clicar no botão `Withdraw` para retirar o OCT em staking.
+
+![withdraw stakes](https://docs.oct.network/assets/img/withdraw_stakes.12c81f01.jpg)

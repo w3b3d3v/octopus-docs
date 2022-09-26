@@ -1,43 +1,43 @@
-## 使用 AWS 自动部署验证节点
+## Automatic deployment with AWS
 
-> 如果没有 AWS 账户，请先[创建和设置 AWS 账户](https://aws.amazon.com/cn/getting-started/guides/setup-environment/?nc1=h_ls)
+> If no AWS account, please firstly [create and setup AWS account](https://aws.amazon.com/getting-started/guides/setup-environment/?nc1=h_ls)
 >
-> [创建 AWS Access Key](https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_credentials_access-keys.html)
+> To create [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
 
-验证人用[生成验证人帐户](./validator-generate-keys.md)中创建的 NEAR 账户访问并登录章鱼网络[主网](https://mainnet.oct.network)。
+Log in to the Octopus Network [mainnet](https://mainnet.oct.network) with the NEAR account created in [Generate Validator Account](./validator-generate-keys.md).
 
-![validator login](../../images/maintain/validator_login.jpg)
+![validator login](../images/maintain/validator_login.jpg)
 
-然后点击`Appchains`选项，在应用链列表中，选择要成为验证人的应用链，点击进入应用链页面，进行以下操作：
+Click the `Appchains` and select the appchain which would like to be a validator, click it to open the appchain page, then perform the following operations:
 
-1. 在应用链页面 **My Node** 区域，选择 `AWS` 并在`Access Key`输入框输入你的`AWS Access Key`，点击`Deploy`；
+1. In the **My Node** area of ​​the appchain page, input your `AWS Access Key` in the `Access Key` input box, then click `Deploy`;
 
-![aws access key](../../images/maintain/validator_aws_accesskey.jpg)
+![aws access key](../images/maintain/validator_aws_accesskey.jpg)
 
-2. 在 **My Node** 区域会显示自动部署的AWS实例配置信息和大致成本，确认后请在`Secret Key`输入你的`AWS Secret Key`，并在`Deploy region`下拉框选择AWS实例部署的区域，点击`Confirm`；
+2. The deployed AWS instance configuration information and approximate cost will be displayed in the **My Node** region. After confirmation, please input your `AWS Secret Key` in `Secret Key` input box and select the deployment area of the AWS instance in the `Deploy region` drop-down box, then click `Confirm`;
 
-![aws secret key](../../images/maintain/validator_aws_secretkey.jpg)
+![aws secret key](../images/maintain/validator_aws_secretkey.jpg)
 
-**注**：AWS Secret Key 仅会被用于此次部署，并且不会在任何地方被存储。
+**Note**: The AWS Secret Key will only be used for this deployment and will not be stored anywhere.
 
-3. 在 **My Node** 区域节点状态为`Applying`，此时是自动部署服务在部署节点。
+3. In the **My Node** area, the node status is `Applying` which means the automatic deployment service is deploying the node.
 
-![validator applying](../../images/maintain/validator_aws_applying.jpg)
+![validator applying](../images/maintain/validator_aws_applying.jpg)
 
-请等待大约3~5分钟，节点状态会变为`Syncing`，此时是验证节点在同步应用链的区块数据，越早上线的应用链，节点同步用的时间会越长。请耐心等待。
+Please wait for about 3~5 minutes, the node status will change to `Syncing` which means the validator node is synchronizing the block data of the appchain. The earlier the appchain is online, the longer the node synchronization time will be. please wait patiently.
 
-![validator syncing](../../images/maintain/validator_aws_syncing.jpg)
+![validator syncing](../images/maintain/validator_aws_syncing.jpg)
 
-如需了解节点的同步情况，可参考[监控节点](./monitor-node.md)。
+To check the synchronization of nodes, please refer to [Monitor Node](./monitor-node.md).
 
-等待节点同步完成后，在 **My Node** 区域节点状态会变为`Running`。
+After the node synchronization, the status in the **My Node** area will change to `Running`.
 
-![validator running](../../images/maintain/validator_aws_running.jpg)
+![validator running](../images/maintain/validator_aws_running.jpg)
 
-自动部署的验证节点，可以在 **My Node** 区域，点击`···`，选择`Instance Info`可以查看运行验证节点实例的硬件状态信息（比如CPU、硬盘、内存）。
+For the automatically deployed validator node, the validator can click `...` in the **My Node** area, and select `Instance Info` to check the hardware status information (such as CPU, hard disk, memory) of the running validator node instance.
 
-节点状态为`Running`时，可进行下一步操作[注册验证人](./validator-register.md)。
+At the `Running` status, the validator can proceed to the next step [register validator](./validator-register.md).
 
-### 更改 AWS 实例类型
+### Change AWS instance type
 
-随着应用链需求的变化，您可以通过更改实例类型来调整 AWS 实例的大小。首先，在 **My Node** 区域点击`Instance`右侧的链接，进入自动部署的 AWS EC2 实例的控制台，然后，参考 AWS EC2 [更改实例类型](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ec2-instance-resize.html)完成操作。
+The validator can resize the AWS instance by changing the instance type as the appchain requirement change. Click the link to the right of `Instance` in the **My Node** region to open the console of the automatically deployed AWS EC2 instance, then, please refer to AWS EC2 [Changing the Instance Type](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/ec2-instance-resize.html) to complete the operation.

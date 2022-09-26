@@ -1,4 +1,4 @@
-## Implantar nó validador
+## Implantar Nó Validador
 
 Para simplificar a implantação do nó validador, a equipe da Octopus Network fornece um serviço de implantação automática para o nó validador. Atualmente, ele suporta: 
 

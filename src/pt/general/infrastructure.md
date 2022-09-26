@@ -1,4 +1,4 @@
-## Infraestrutura da rede Octopus
+## Infraestrutura da Rede Octopus
 
 A Octopus Network fornece suporte de infraestrutura para appchains dentro do ecossistema, incluindo rede de teste, gateway RPC, indexador, explorador de blocos, ponte entre cadeias e muito mais.
 

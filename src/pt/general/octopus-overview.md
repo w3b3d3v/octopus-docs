@@ -1,4 +1,4 @@
-## Visão geral da rede Octopus
+## Visão geral da Rede Octopus
 
 A Octopus Network é uma nova rede multi cadeia nascida para servir blockchains específicas de aplicativos, também conhecidas como Appchain. A Octopus Network oferece segurança alugada flexível e acessível, interoperabilidade entre cadeias prontas para uso, infraestrutura completa e uma comunidade pronta para ser engajada para as appchains.
 

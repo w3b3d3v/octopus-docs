@@ -1,9 +1,9 @@
-## Validador de registro
+## Registrar Validador
 
 
 Para registrar o validador da appchain, o validador precisa concluir as operações de registro do validador e configuração da Session Key.
 
-### Validador de registro
+### Registrar Validador
 
 Clique em `Register Validator` na área  **My Node** da página appchain e insira os campos abaixo na página pop-up:
 

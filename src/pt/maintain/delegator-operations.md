@@ -1,4 +1,4 @@
-## Operações do delegante
+## Operações do Delegante
 
 Após a delegação, o delegante poderia selecionar o validador delegado e clicar em `Delegated` para abrir a página `Validator Profile`.
 
@@ -10,18 +10,18 @@ O delegante pode fazer as operações abaixo na página `Validator Profile`.
 * Reivindicar recompensas
 * Delegação de desvinculação
 
-### Aumentar/diminuir delegação
+### Aumentar/Diminuir delegação
 
 Clique em `+` ou `-` para aumentar ou diminuir a quantidade de delegação na página `Validator Profile`.
 
-### Reivindicar recompensas
+### Reivindicar Recompensas
 
 
 Após um ciclo de recompensa (~ 1 dia), o delegante obterá as recompensas de staking, que precisam ser reivindicadas manualmente. Clique no botão `Rewards`  na página `Validator Profile`,  selecione `Delegator Reward` e clique em  `Claim` para reivindicar as recompensas.
 
 ![delegator claim reward](https://docs.oct.network/assets/img/delegator_claim_rewards.f6ccc0c5.jpg)
 
-### Delegação de desvinculação
+### Delegação de Desvinculação
 
 Clique no botão `Unbond Delegation` na página `Validator Profile` para realizar a operação de delegação de desvinculação.
 
@@ -29,7 +29,7 @@ Clique no botão `Unbond Delegation` na página `Validator Profile` para realiza
 
 ![delegator unbond](https://docs.oct.network/assets/img/delegator_unbond.0e6ab068.jpg)
 
-### Retirada de OCT em staking
+### Retirada de OCT em Staking
 
 É o mesmo que o validador. Clique em `...` e selecione `Withdraw Stakes` na área **My Staking**.
 

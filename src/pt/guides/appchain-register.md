@@ -1,12 +1,16 @@
-## Appchain Register
+## Registro de Appchain
 
-### Checklist before registration
 
-This section aims to list the items that the Appchain team needs to check before Appchain registration to ensure a smooth launch.
+### Fazer _Checklist_ antes do registro
 
-+ The Appchain is using the latest version of the barnacle/barnacle-evm template.
-+ The version of Substrate used in Cargo.toml of Appchain should be consistent with the template.
-+ The below pallets defined in the `construct_runtime!` part in the Appchain runtime code (runtime/src/lib.rs) should be consistent with the template.
+Esta seção tem como objetivo listar os itens que o time da Appchain precisa verificar antes do registro na Appchain, para garantir um lançamento sem problemas.
+
+
+
+* A Appchain está usando a última versão do template barnacle/barnacle-evm.
+* A versão do Substrate usada no Cargo.toml da Appchain deve ser consistente com o template.
+* Os paletes abaixo definidos na parte `construct_runtime!` no código de tempo de execução da Appchain (runtime/src/lib.rs) deve ser consistente com o template.
+
 
 ```rust
 construct_runtime!(
@@ -21,7 +25,7 @@ construct_runtime!(
 		Authorship: pallet_authorship,
 		Balances: pallet_balances,
 		TransactionPayment: pallet_transaction_payment,
-		OctopusAppchain: pallet_octopus_Appchain, // must before session
+		OctopusAppchain: pallet_octopus_Appchain, // deve antes da sessão
 		OctopusLpos: pallet_octopus_lpos,
 		OctopusUpwardMessages: pallet_octopus_upward_messages,
 		OctopusAssets: pallet_assets::<Instance1>,
@@ -34,55 +38,65 @@ construct_runtime!(
 		MmrLeaf: pallet_beefy_mmr,
 		Uniques: pallet_uniques,
 		Sudo: pallet_sudo,
-		// Include the custom logic from the pallet-template in the runtime.
+		// Inclui a lógica personalizada do template-palete no tempo de execução. 
 		TemplateModule: pallet_template,
 	}
 );
+
 ```
 
-+ The block time of the Appchain is consistent with the template, set to 6s.
+
+
+* O tempo de bloco da Appchain é consistente com o template, definido para 6s.
+
 
 ```rust
 pub const MILLISECS_PER_BLOCK: Moment = 6000;
 pub const EPOCH_DURATION_IN_BLOCKS: BlockNumber = 4 * HOURS;
+
 ```
-+ In Appchain chain spec JSON file, the setting of `ss58Format` should be 42. Also, if Appchain does not support the stablecoin assets (USDN in the NEAR network) cross-chain transfer from the Mainchain to Appchain, please set `assetIdByTokenId` with `[]`.
+
+
+
+* No arquivo JSON especificado na cadeia Appchain, a configuração de `ss58Format` deve ser 42. Além disso, se a Appchain não suportar a transferência _cross-chain_ de ativos estáveis (USDN na rede NEAR) da cadeia principal para a Appchain, favor definir `assetIdByTokenId` com `[]`. 
 
 ```
 "assetIdByTokenId": []
 ```
 
-+ During Appchain team registration, the Token Icon of provided by Appchain must be in SVG format.
-
-### Prerequisites
-
-* NEAR account.
-* OCT token: The Appchain team needs pay 1k OCT tokens as an **Auditing Fee**. For the testnet, the Appchain team can request OCTs from Discord.
-
-### Steps of Appchain Registration
-
-1. Log in to the Octopus apps via a NEAR account.
-2. Click the **Join Octopus** button, and then fill in the following information:
-    * **Appchain ID**: 3-20 characters consisting of lowercase letters, numbers and hyphen `-`, and cannot start with a number, and a hyphen `-` cannot be used at the beginning and end, a.k.a the regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`
-    * **Token Info**
-        - **Token Name**: The name of the Appchain native token
-        - **Token Symbol**: The symbol of the Appchain native token
-        - **Icon**: The **SVG** format icon link of the Appchain native token
-        - **Decimals**: The decimals of the Appchain native token
-    * **Website**: The official website of the Appchain
-    * **Function Spec**: The url of the Appchain functional specification file
-    * **Github Address**: The Github repository of Appchain
-    * **Github Release**: The Github URL of the release of the Appchain
-    * **Initial Supply**: The Appchain native token amount of the initial issues
-    * **Premined**: The number of wrapped tokens that be Premined to the NEAR network in the total initial issuance
-    * **Beneficiary**: The NEAR account to receive the Premined wrapped token
-    * **IDO Amount**: The number of tokens used by the Appchain team to use Skyward for IDO before the Mainnet launch
-    * **Daily Reward**: The Appchain native token amount as its block reward for each day
-    * **Email**: The contact email of the Appchain
-    * **Template Type**: The template type used by the Appchain
-    * **Project Description**: A single sentence introduction of the Appchain
 
 
-   ![Register Screenshot](../images/guides/register.png)
+* Durante o registro do time Appchain, o Ícone do Token fornecido pela Appchain deve estar no formato SVG.
 
-3. Click *Submit* to send the registration request.
+### Pré-requisitos
+
+* Conta NEAR.
+* Token OCT: O time da Appchain precisa pagar 1k de tokens OCT como taxa de auditoria. Para a testnet, a equipe da Appchain pode solicitar OCTs da Discord.
+
+### Passos para o Registro da Appchain
+
+1. Faça login nos aplicativos da Octopus por meio da conta NEAR.
+2. Clique no botão **Join Octopus** e depois preencha as seguintes informações:
+    * **ID da Appchain**: 3-20 caracteres com letras minúsculas, números e hifen`-`, não pode começar com número e o hífen `-` não pode ser usado nem no início nem no final, também chamado de expressão regular: `[a-z]([-a-z0-9]*[a-z0-9])?`
+    * **Informações do Token** 
+        * **Nome do Token**: O nome do token nativo da Appchain
+        * **Símbolo do Token**: O símbolo do token nativo da Appchain 
+        * **Ícone**: O link do ícone no formato SVG do token nativo da Appchain
+        * **Decimais**: Os decimais do token nativo da Appchain 
+    * **Website**: O website oficial da Appchain
+    * **Especificação da Função**: O url do arquivo da especificação funcional da Appchain
+    * **Endereço do Github**: O repositório Github da Appchain
+    * **Publicação do Github**:O URL do Github da publicação da Appchain
+    * **Suprimento inicial**: A quantidade de tokens nativos da Appchain das emissões iniciais
+    * **Pré-minerados**: O número de tokens encapsulados que são Pré-minerados para a rede NEAR no total da emissão inicial
+    * **Beneficiário**: A conta NEAR que vai receber os tokens encapsulados Pré-minerados 
+    * **Quantidade IDO** (Oferta inicial de Dex): O número de tokens utilizados pelo time da Appchain para usar Skyward para IDO antes do lançamento da Mainnet
+    * **Recompensa Diária**: A quantidade de tokens nativos da Appchain usada como sua recompensa de bloco por dia
+    * **E-mail**: O contato de e-mail da Appchain
+    * **Tipo de Template**: O tipo de template usado pela Appchain
+    * **Descrição do Projeto**: Uma única frase de introdução da Appchain
+
+
+ ![Register Screenshot](https://docs.oct.network/assets/img/register.972c3289.png)
+
+3. Clique em _Submit_ para enviar solicitação de registro. 

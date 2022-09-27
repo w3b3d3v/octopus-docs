@@ -1,91 +1,97 @@
-## Register Validator
+## Registrar Validador
 
-To register the validator of the appchain, the validator need to complete the operations of registering the validator and setting the Session Key.
 
-### Register validator
+Para registrar o validador da appchain, o validador precisa concluir as operações de registro do validador e configuração da Session Key.
 
-Click `Register Validator` on the **My Node** area of ​​the appchain page and input the below fields in the pop-up page:
+### Registrar Validador
 
-* `Appchain Account`, the appchain account of the validator which is the address generated in the step [Generate Validator Account](./validator-generate-keys.md).
-* `Deposit Amount`, the amount of staking OCT by the validator;
-* `Email`, the contact email of the validator;
-* `Twitter ID`, the Twitter account of the validator;
-* `Accept delegation`, select whether the validator node accepts [delegator delegation](./delegator-delegate.md);
+Clique em `Register Validator` na área  **My Node** da página appchain e insira os campos abaixo na página pop-up:
+
+
+* `Appchain Account`, a conta appchain do validador, que é o endereço gerado na etapa [Generate Validator Account](./validator-generate-keys.md).
+* `Deposit Amount`, a quantidade de OCT em staking pelo validador;
+* `Email`, o e-mail de contato do validador;
+* `Twitter ID`, a conta do Twitter do validador;
+* `Accept delegation`, selecione se o nó validador aceita [ delegação de delegante](./delegator-delegate.md);
     
-Click `Register`.
+Clique em `Register`.
 
-![validator register](../images/maintain/validator_register.jpg)
+![validator register](https://docs.oct.network/assets/img/validator_register.50251ee7.jpg)
 
-After successful registration, please wait for about 1~2 minutes, and the validator's appchain account will receive one appchain native token which used for the next step.
+Após o registro bem-sucedido, aguarde cerca de 1 a 2 minutos e a conta da appchain do validador receberá um token nativo da appchain que será usado na próxima etapa.
 
-### Set Session Key
+### Definir chave de sessão
 
-**Note**: Please make sure that the validator node has completed the synchronization of the chain data, and the validator's appchain account has received th appchain native token.
+**Nota**: Certifique-se de que o nó do validador concluiu a sincronização dos dados da cadeia e que a conta da appchain do validador recebeu o token nativo da appchain.
 
-Click `...` on the **My Node** area of ​​the appchain page, select `Set Session Key`, and on the pop-up page, select the appchain account filled in the registration.
+Clique em `...` na área **My Node**  da página da appchain, selecione `Set Session Key`, e na página pop-up, selecione a conta da appchain preenchida no cadastro.
 
-For the automatically deployed validator, click `Set`.
+Para o validador implantado automaticamente, clique em `Set`.
 
-![validator set sessionkey](../images/maintain/validator_set_sessionkey.jpg)
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey.40c8a998.jpg)
 
-![validator set sessionkey](../images/maintain/validator_set_sessionkey2.jpg)
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey2.3657ceff.jpg)
 
-For the manually deployed validator, please input the content of the `result` field output in the `author_rotateKeys` operation into the `Session key` input box;
+Para o validador implantado manualmente, por favor, insira o conteúdo da saída do campo `result` na operação `author_rotateKeys` na caixa de entrada `Session key`;
 
-![validator set sessionkey](../images/maintain/validator_set_sessionkey1.jpg)
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey1.93a8b38a.jpg)
 
-![validator set sessionkey](../images/maintain/validator_set_sessionkey3.jpg)
+![validator set sessionkey](https://docs.oct.network/assets/img/validator_set_sessionkey3.d96025ad.jpg)
 
-The validator will be added into the next round of validator sets after waiting for a reward cycle (~1 day).
+O validador será adicionado à próxima rodada de conjuntos de validadores após aguardar um ciclo de recompensa (~ 1 dia).
 
-#### Check Session key
+### Verificar chave de sessão
 
-Open the [PolkadotJS-Apps](https://polkadot.js.org/apps/),  the validator can configure the `custom endpoint` with the appchain RPC Endpoit.
 
-![RPC Endpoit](../images/maintain/appchain_rpc.jpg)
+Abra o [aplicativo PolkadotJS](https://polkadot.js.org/apps/),  o validador pode configurar o  `custom endpoint` com a Appchain RPC Endpoint.
 
-Once ensuring that you have connected to appchain RPC endpoit, navigate to `Developer` tab and select `Chain State` then select the `session > nextKeys(AccountId32)` option, and select your validator account, and then click `+`. 
+![RPC Endpoit](https://docs.oct.network/assets/img/appchain_rpc.8d36385a.jpg)
 
-![check session keys](../images/maintain/validator_check_session_keys.jpg)
+Depois de garantir que você se conectou a appchain RPC endpoint, navegue até a guia  `Developer` e selecione `Chain State` em seguida, selecione a opção  `session > nextKeys(AccountId32)` selecione sua conta de validador e clique em `+`. 
 
-Check whether the return value is consistent with the Session keys you have set.
+![check session keys](https://docs.oct.network/assets/img/validator_check_session_keys.d95d101c.jpg)
 
-### Claim rewards
+Verifique se o valor de retorno é consistente com as chaves de sessão que você definiu.
 
-After a reward cycle (~1 day), the validator will receive the staking reward, which needs to be claimed manually. In the **My Staking** area, click **Rewards** , then select the `Validator Reward` and click the `Claim` button to claim the reward.
 
-![validator claim rewards](../images/maintain/validator_claim_rewards.jpg)
+### Reivindicar recompensas
 
-### Stop validating
+Após um ciclo de recompensa (~ 1 dia), o validador receberá a recompensa de staking, que precisa ser reivindicada manualmente. Na área **My Staking**, clique em **Rewards**, então selecione  `Validator Reward` e clique no botão `Claim` para reivindicar a recompensa.
 
-To stop validating, it needs to unbond staking and stop the validator node.
 
-### Unbond staking
+![validator claim rewards](https://docs.oct.network/assets/img/validator_claim_rewards.90aa4795.jpg)
 
-Click `Manage` to open the `Validator Profile` page.
 
-![validator manage](../images/maintain/validator_manage.jpg)
+### Parar de validar
 
-Click the `Unbond Validator` button on the `Validator Profile` page to perform the unstaking operation.
+Para parar de validar, é necessário desvincular o staking e parar o nó validador.
 
-![validator unbond](../images/maintain/validator_unbond.jpg)
+### Desvincular Staking
 
-> **Note**: After unbond, the staking OCT will have an unbonding period. Before the unbonding period ends, it cannot be withdrawable and you will not obtain any staking rewards.
+Clique em  `Manage` para abrir a página `Validator Profile`.
 
-### Stop the validator node
+![validator unbond](https://docs.oct.network/assets/img/validator_manage.76c26e0e.jpg)
 
-For the node which was deployed via the automatic deployment service, the validator can click the `Destory` button in the **My Node** area to stop the validator node and delete the instance of automatic deployment.
+Clique no botão `Unbond Validator` na página `Validator Profile` para realizar a operação de retirada do staking.
 
-For the node which was deployed manually, please remember to stop it.
+![unbond withdraw](https://docs.oct.network/assets/img/validator_unbond.f2b36239.jpg)
 
-> **Note**: After unbond, if stop the node immediately, the validator will have no rewards for the last reward cycle. If stop it after one reward cycle, the validator will still have the rewards.
+>**Nota**: Após a desvinculação, o OCT em staking terá um período de desvinculação. Antes do término do período de desvinculação, ele não pode ser retirado e você não obterá nenhuma recompensa de staking.
 
-### Withdraw staking OCT
+### Pare o nó validador
 
-Click `...` and select `Withdraw Stakes` on the **My Staking** area.
+Para o nó que foi implantado por meio do serviço de implantação automática, o validador pode clicar no botão `Destory` na área **My node** para interromper o nó validador e excluir a instância de implantação automática.
 
-![unbond withdraw](../images/maintain/unbond_withdraw.jpg)
+Para o nó que foi implantado manualmente, lembre-se de interrompê-lo.
 
-After the unbonding period ends, you can click the `Withdraw` button to withdraw the staking OCT.
+>**Nota**: Após a desvinculação, se parar o nó imediatamente, o validador não terá recompensas para o último ciclo de recompensas. Se parar após um ciclo de recompensa, o validador ainda terá as recompensas.
 
-![withdraw stakes](../images/maintain/withdraw_stakes.jpg)
+### Retirar OCT do staking
+
+Clique em `...` e selecione `Withdraw Stakes`  na área **My Staking**.
+
+![unbond withdraw](https://docs.oct.network/assets/img/unbond_withdraw.6816eac7.jpg)
+
+Após o término do período de desvinculação, você pode clicar no botão `Withdraw` para retirar o OCT do staking.
+
+![withdraw stakes](https://docs.oct.network/assets/img/withdraw_stakes.12c81f01.jpg)

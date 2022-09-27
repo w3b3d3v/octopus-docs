@@ -1,29 +1,29 @@
-## Visão Geral da Rede Octopus
+## Visão geral da Rede Octopus
 
-Octopus Network is a brand new multichain network born to serve application-specific blockchains, aka Appchain. Octopus Network provides flexible and affordable leased security, out-of-box cross-chain interoperability, one-stop infrastructure, and a ready-to-be-engaged community for the appchains.
+A Octopus Network é uma nova rede multi cadeia nascida para servir blockchains específicas de aplicativos, também conhecidas como Appchain. A Octopus Network oferece segurança alugada flexível e acessível, interoperabilidade entre cadeias prontas para uso, infraestrutura completa e uma comunidade pronta para ser engajada para as appchains.
 
-![Octopus Network Architecture](../images/general/Octopus_Architecture.png)
+![Octopus Network Architecture](https://docs.oct.network/assets/img/Octopus_Architecture.0c3753cb.png)
 
-The full name of abbreviations in the architecture diagram:
+O nome completo das abreviações no diagrama de arquitetura:
 
-| Abbreviations | Full Name  |
+| Abreviaturas | Nome completo  |
 |------|------|
-| D | Delegator, delegate OCT to the validator for the staking |
-| S | Staking, maintain the secure of appchain |
-| V | Validator, stake OCT and run validator node for the staking |
-| RT | (Substrate) RunTime, the appchain application logic |
-| N | Node, the appchain full nodes | 
+| D | Delegante, delega OCT ao validador para o staking |
+| S | Staking, mantém a segurança da appchain |
+| V | Validador, Stake de OCT e executa o nó validador para o staking |
+| RT | (Substrate) RunTime, a lógica da aplicação appchain |
+| N | Nó, os nós completos da appchain | 
 
 ### Octopus Relay
 
-Octopus Relay is the core of the Octopus Network — a set of  [smart contracts](https://github.com/octopus-network/octopus-relay-contract) running on the NEAR blockchain, aka mainchain, that implements the security leasing market.
+Octopus Relay é o núcleo da Octopus Network - um conjunto de  [ contratos inteligentes](https://github.com/octopus-network/octopus-relay-contract) rodando na blockchain NEAR, também conhecida como rede principal, que implementa o mercado de leasing de segurança.
 
 ### Appchain
 
-An Octopus Appchain is a Substrate-based blockchain that is made for a specific decentralized application. Once integrating the pallet [pallet-octopus-appchain](https://github.com/octopus-network/pallet-octopus-appchain), the Appchain will be geared up to anchor off the Octopus Network.
+Uma Appchain Octopus  é uma blockchain baseada em Substrate, feita para um aplicativo descentralizado específico. Uma vez integrado o palete  [pallet-octopus-appchain](https://github.com/octopus-network/pallet-octopus-appchain), a Appchain será preparada para ancorar fora da Octopus Network.
 
-### Validator
+### Validador
 
-In the Octopus Network, OCT holders can stake OCTs to become validators or delegators. Validators secure Appchains by staking OCT and [running the validator nodes](../maintain/validator-guide.md) of the Appchain. Delegators secure Appchains by delegating the OCT they stake to honest validators.
+Na Rede Octopus, os detentores de OCT podem fazer stake de OCTs para se tornarem validadores ou delegantes. Os validadores protegem as Appchains fazendo staking de OCT e [executando os nós validadores](../maintain/validator-guide.md) da Appchain. Os delegantes protegem as Appchains delegando OCT dos quais eles fazem staking para validadores honestos.
 
-The validators are rewarded with the native token of the corresponding Appchains by validating transactions and blocks. If a validator misbehaves (e.g. be offline, attacks the network, or runs malware) in the network, the staked OCT of both the validator and its delegators will be slashed proportionally.
+Os validadores são recompensados ​​com o token nativo das Appchains correspondentes, validando transações e blocos. Se um validador se comportar mal (por exemplo, estar offline, atacar a rede ou executar malware) na rede, o OCT em stake do validador e de seus delegantes será reduzido proporcionalmente.

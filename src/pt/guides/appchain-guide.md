@@ -1,58 +1,73 @@
-# Appchain developer guide
+# Guias do Desenvolvedor
 
-Before getting into development, it is assumed that you have an understanding of the [Octopus Network](https://oct.network/)  and the [overall architecture](https://docs.oct.network/general/octopus-overview.html#octopus-network-overview) of the Octopus Network.
-
-
-## Develop & Test
-
-Set up a development and test environment
-
-+ [Install Rust and Substrate](https://docs.substrate.io/main-docs/install/)
-+ [Setup a multi-node Appchain network](https://docs.substrate.io/tutorials/get-started/simulate-network/) in the local environment
-+ [Substrate Command Line Tools](https://docs.substrate.io/reference/command-line-tools/)
-
-Develop Appchain based on the template provided by the Octopus Network
-
-+ [Appchain template](https://github.com/octopus-network/barnacle/tree/release-v0.9.18)
-+ [Appchain EVM compatible template](https://github.com/octopus-network/barnacle/tree/release-v0.9.18-evm)
+Antes de entrar no desenvolvimento, supõe-se que você tenha um entendimento da [Octopus Network](https://oct.network/) e da [arquitetura global](../general/octopus-overview.md) da Octopus Network.
 
 
-Develop Appchain based on the Barnacle template
+## Desenvolver e Testar
 
-+ [Develop runtime](https://docs.oct.network/guides/appchain-develop.html#implement-appchain-runtime)
-+ [Substrate Build](https://docs.substrate.io/main-docs/build/)
-+ [Substrate Pallet](https://docs.substrate.io/tutorials/work-with-pallets/)
-
-Develop Appchain based on the Barnacle EVM template
-
-+ [Appchain EVM](https://docs.oct.network/guides/appchain-evm.html#appchain-evm-compatible)
-+ [Develop DApp](https://docs.moonbeam.network/builders/build/eth-api/)
+Configure um ambiente de desenvolvimento e teste
 
 
-## Launch Testnet & Mainnet
 
-After completing the Appchain development, please familiar with the [Appchain launch process](https://docs.oct.network/guides/appchain-startup.html), and then contact the Octopus team to launch the Testnet.
+* [Instale o Rust e o Substrate](https://docs.substrate.io/main-docs/install/)
+* [Configure uma rede multi-nós Appchain ](https://docs.substrate.io/tutorials/get-started/simulate-network/)no ambiente local
+* [Linha de Comando Substrate ToolsSetup uma rede Appchain multi-nó](https://docs.substrate.io/reference/command-line-tools/)
 
-+ [Register](https://docs.oct.network/guides/appchain-register.html#appchain-register)
-+ [Audit]()
-+ [Voting](https://docs.oct.network/guides/voting-appchain.html#voting-for-appchain)
-+ [Booting](https://docs.oct.network/guides/appchain-startup.html#appchain-booting-process)
-
-> The Mainnet launch process is the same as the Testnet.
+Desenvolva a Appchain baseada no template fornecido pela Octopus Network
 
 
-## Upgrade & Maintain
-[Appchain upgrade](https://docs.oct.network/guides/appchain-upgrade.html#appchain-upgrade)
 
-## Security
+* [Template Appchain ](https://github.com/octopus-network/barnacle/tree/release-v0.9.18)
+* [Template Appchain compatível com EVM](https://github.com/octopus-network/barnacle/tree/release-v0.9.18-evm)
 
-In the Octopus Network, the OCT holders can stake OCTs to become validators or delegators who provide the security for the Appchain.
+Desenvolva a Appchain baseada no template Barnacle 
 
-+ [Octopus Network LPoS](https://docs.oct.network/general/octopus-staking.html#octopus-network-staking)
-+ [Validator Guide](https://docs.oct.network/maintain/validator-guide.html)
-+ [Delegator Guide](https://docs.oct.network/maintain/delegator-delegate.html)
 
-Validator nodes
 
-+ [Check the status of the Appchain](https://mainnet.oct.network/appchains)
-+ Monitor the validator node  status through the [telemetry node](https://telemetry.mainnet.octopus.network/)
+* [Tempo de execução de desenvolvimento](appchain-develop.md)
+* [Construção do Substrate ](https://docs.substrate.io/main-docs/build/)
+* [Palete Substrate ](https://docs.substrate.io/tutorials/work-with-pallets/)
+
+Desenvolva a Appchain baseada no template EVM Barnacle
+
+
+
+* [Appchain EVM](appchain-evm.md)
+* [Desenvoler a DApp](https://docs.moonbeam.network/builders/build/eth-api/)
+
+## Lançar a Testnet e Desenvolver a Mainnet
+
+
+Após concluir o desenvolvimento da Appchain, por favor, familiarize-se com o [Processo de lançamento da Appchain ](appchain-startup.md), e então, entre em contato com o time Octopus para lançar a Testnet.
+
+
+
+* [Registrar](appchain-register.md)
+* [Auditar](https://github.com/octopus-network/octopus-docs/tree/main/src/guides)
+* [Votar](voting-appchain.md)
+* [Inicializar](appchain-startup.md)
+
+>O processo de lançamento da Mainnet é o mesmo que o da Testnet.
+
+
+## Atualizar e Manter
+
+[Atualizar a Appchain ](appchain-upgrade.md)
+
+
+## Segurança
+
+Na Octopus Network, os proprietários de OCT podem fazer stake de OCTs para se tornarem validadores ou delegantes que fornecem segurança à Appchain.
+
+
+
+* [LPoS da Octopus Network ](../general/octopus-staking.md)
+* [Guia do Validador](../maintain/validator-guide.md)
+* [Guia do Delegante](../maintain/delegator-delegate.md)
+
+Nós validadores
+
+
+
+* [Verificar o status da Appchain](https://mainnet.oct.network/appchains)
+* Monitorar o status do nó validador por meio do [telemetry node](https://telemetry.mainnet.octopus.network/)

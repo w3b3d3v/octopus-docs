@@ -1,19 +1,21 @@
-## Octopus Network Infrastructure
+## Infraestrutura da Rede Octopus
 
-Octopus Network provides infrastructure supports for appchains within the ecosystem, including testnet, RPC gateway, indexer, block explorer, cross-chain bridge, and more.
+A Octopus Network fornece suporte de infraestrutura para appchains dentro do ecossistema, incluindo rede de teste, gateway RPC, indexador, explorador de blocos, ponte entre cadeias e muito mais.
 
-### Testnet
+### Rede de teste
 
-Appchain team can [apply](../guides/appchain-register.md) and launch the testnet to learn the [onboarding process](../guides/appchain-startup.md) and do the functionality testing before the mainnet launch.
+A equipe da Appchain pode [se inscrever](../guides/appchain-register.md) e iniciar a rede de teste para aprender o  [processo de integração](../guides/appchain-startup.md) e fazer o teste de funcionalidade antes do lançamento da rede principal.
 
-### RPC Gateway and Indexer
 
-Appchain team can use RPC gateway and [Indexer](../guides/appchain-indexer.md) to speed up and simplify the development of the front-end applications.
+### Gateway RPC e Indexador
 
-### Block Explorer
+Os usuários da appchain podem consultar os detalhes das transações por meio do explorador de blocos. [Indexador](../guides/appchain-indexer.md) para acelerar e simplificar o desenvolvimento dos aplicativos front-end.
 
-The users of the appchain can query the details of the transactions through the block explorer.
 
-### Cross-chain Bridge
+### Explorador de blocos
 
-The cross-chain bridge of the Octopus Network is a two-direction cross-chain bridge between the appchain and the NEAR network, through which the appchain team can [transfer assets](../guides/assets-cross-chain.md) on the two networks. At the same time, before the launch of the mainnet of the appchain, the appchain team can also [transfer some native tokens](../guides/assets-cross-chain.md) through the cross-chain bridge for the IDO.
+Os usuários da appchain podem consultar os detalhes das transações por meio do explorador de blocos.
+
+### Ponte de cadeia cruzada
+
+A ponte de cadeia cruzada da Rede Octopus é uma ponte de cadeia cruzada bidirecional entre a cadeia de aplicativos e a rede NEAR, por meio da qual a equipe da appchain pode [transferir ativos](../guides/assets-cross-chain.md) onas duas redes. Ao mesmo tempo, antes do lançamento da rede principal da appchain, a equipe da appchain também pode [transferir alguns tokens nativos](../guides/assets-cross-chain.md)  por meio da ponte de cadeia cruzada para o IDO.

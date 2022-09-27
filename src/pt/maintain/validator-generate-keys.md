@@ -1,12 +1,12 @@
-## Generate Validator Account
+## Gerar conta do validador
 
-Every validator must have:
-* A NEAR account, used to log in to the Octopus network, register the validator, etc.;
-* An appchain account, used to set the session key of the validator node, manage the appchain assets, etc.
+Todo validador deve ter:
+* Uma conta NEAR, utilizada para fazer login na rede Octopus, cadastrar o validador, etc.;
+* Uma conta appchain, usada para definir a chave de sessão do nó validador, gerenciar os ativos da appchain, etc.
 
-To create a NEAR account, please refer to [Creating a NEAR Account](https://docs.near.org/concepts/basics/accounts/creating-accounts)
+Para criar uma conta NEAR, consulte [Criar uma conta NEAR](https://docs.near.org/concepts/basics/accounts/creating-accounts)
 
-To create an appchain account, please use the following two browser plugin wallets:
+Para criar uma conta appchain, por favor use os dois plugins de navegador para as  carteiras a seguir:
 
-* [Polkadot{.js} Wallet](https://polkadot.js.org/extension/) is a simple browser extension tool that users can use to generate accounts, and use accounts to sign transactions.
-* [Avatar Wallet](https://chrome.google.com/webstore/detail/avatar-wallet/ckfhnogibicdkfkijinnacpmmobbhbjk) is a browser extension wallet designed for the Octopus network appchain ecosystem, supporting all native tokens of the Substrate appchain.
+* [Carteira Polkadot{.js](https://polkadot.js.org/extension/) é uma ferramenta simples de extensão de navegador que os usuários podem usar para gerar contas e usar contas para assinar transações.
+* [Carteira Avatar](https://chrome.google.com/webstore/detail/avatar-wallet/ckfhnogibicdkfkijinnacpmmobbhbjk) é uma carteira de extensão de navegador projetada para o ecossistema appchain de aplicativos da rede Octopus, suportando todos os tokens nativos da appchain do Substrate.

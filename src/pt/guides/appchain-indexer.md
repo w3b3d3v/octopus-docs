@@ -1,5 +1,6 @@
-## Appchain Indexer
+## Indexador de Appchain
 
-The Octopus Network prepare the indexer for each appchain, which provide GraphQL interface and make frond-end development much more simplified than the RPC. Now each Appchain explorer is based on this indexer service.
+A Rede Octopus prepara o indexador para cada appchain, que fornece interface GraphQL e torna o desenvolvimento de front-end muito mais simplificado do que o RPC. Agora cada Appchain explorer é baseado neste serviço de indexador.
 
-How to use the Indexer? Please refer to the [tutorials](https://doc.subquery.network/tutorials_examples/run-indexer/) from the SubQuery.
+Como usar o Indexador? Por favor, consulte os [tutoriais](https://doc.subquery.network/tutorials_examples/run-indexer/) do SubQuery.
+

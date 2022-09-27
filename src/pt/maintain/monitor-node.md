@@ -1,17 +1,18 @@
-## Monitor Node
+## Nó de Monitoramento
 
-Validator can check the validator node status through the [Telemetry](https://telemetry.mainnet.octopus.network/).
+O validador pode verificar a situação do nó validador por meio da [Telemetria](https://telemetry.mainnet.octopus.network/).
 
-If it is automatically deployed, the node name of the validator will default to `validator-[NEAR account]`, where `[NEAR account]` is the NEAR account used to log in to Octopus Network when the validator is registered.
+Se for implantado automaticamente, o nome do nó validador será padronizado para `validator-[NEAR account]`, onde `[NEAR account]` é a conta NEAR usada para fazer login na Octopus Network quando o validador for registrado.
 
-If it is manually deployed, the validator can use the `--telemetry-url` option when running the validator node, and set its value to `'wss://telemetry.mainnet.octopus.network/submit 9'`. Also, the validator can use the `--name` option to set the name of the validator node, so that the validator can check the node status by the node name.
+Se for implementado manualmente, o validador poderá usar a  opção  `--telemetry-url` ao executar o nó validador e definir seu valor como `'wss://telemetry.mainnet.octopus.network/submit 9'`. Além disso, o validador pode usar a opção  `--name` para definir o nome do nó validador, para que o validador possa verificar o estado do nó pelo nome do nó
 
-### Validator status
+### Estado do Validador
 
-In the **Validators** list, validators mainly have the following status:
+Na lista **Validators** os validadores têm principalmente o seguinte estado:
 
-* Registered, missing session keys, the validator need to set Session Key;
-* New, coming next day(era), the validator need to wait to enter the next validator set;
-* Validating, the validator works normally;
-* Validating, not producing blocks, the validator need to check whether the validator node is running normally;
-* Unstaking, the validator unbond the staking;
+* Registrado, faltando chaves de sessão, o validador precisa definir a chave de sessão;
+* Novo, chegando no dia seguinte (era), o validador precisa esperar para entrar no próximo conjunto de validador;
+* Validando, o validador funciona normalmente;
+* Validando, não produzindo blocos, o validador precisa verificar se o nó validador está rodando normalmente;
+* Unstaking, o validador desvincula o staking;
+

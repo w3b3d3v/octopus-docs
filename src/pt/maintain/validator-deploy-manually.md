@@ -1,47 +1,57 @@
-## Manually Deploy Validator Node
+  
+ ## Implante Manualmente o Nó Validador 
 
-To manually deploy the validator node of the appchain, the validator can choose their favorite VPS provider, and generally using the **Ubuntu** operating system.
 
-The following steps are required:
+Para implantar manualmente o nó validador da appchain, o validador pode escolher seu provedor de VPS favorito, e geralmente usando o sistema operacional **Ubuntu**.
 
-1. Install Rust
-2. Install Dependencies
-3. Get the appchain Node
-4. Run the appchain node
+As seguintes etapas são necessárias:
 
-### 1. Install Rust
 
-If you have never installed Rust, you should do this first. This command will fetch the latest version of Rust and install it.
+
+1. Instalar o  Rust
+2. Instalar as Dependências
+3. Obter o Nó da appchain
+4. Executar o nó da appchain 
+
+### 1. Instalar o Rust
+
+
+Se você nunca instalou o Rust, você deve fazer isso primeiro. Este comando irá buscar a última versão do Rust e instalá-la.
+
 
 ```bash
-# Install
+# Instalar
 curl https://sh.rustup.rs -sSf | sh
-# Configure
+# Configurar
 source ~/.cargo/env
 ```
 
-If you have already installed Rust, run the following command to make sure you are using the latest version.
+
+Se você já instalou o Rust, execute o seguinte comando para ter certeza de que está usando a versão mais recente.
 
 ```bash
 rustup default stable
 rustup update
 rustup update nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
+n-unknown --toolchain nightly
 ```
 
-### 2. Install Dependencies
 
-Run this command to install the necessary dependencies for compiling and running the substrate-based Appchain node software.
+
+### 2. Instalar as Dependências
+
+Execute este comando para instalar as dependências necessárias para a compilação e execução do software baseado no Substrate do nó Appchain .
 
 ```bash
 sudo apt update
-# May prompt for location information
+# Pode solicitar informações de localização
 sudo apt install make clang pkg-config libssl-dev build-essential
 ```
 
-### 3. Get the appchain node
+### 3. Obter o nó da appchain 
 
-You can generate the appchain node by compiling the source code from the appchain repository. Please refer to the following command:
+Você pode gerar o nó appchain compilando o código fonte a partir do repositório appchain. Por favor, consulte o seguinte comando:
 
 ```bash
 git clone <Appchain GitHub Repo>
@@ -49,17 +59,18 @@ cd <Appchain>
 cargo build --release
 ```
 
-> `<Appchain GitHub Repo>`, the GitHub repository of appchain, navigate to it by clicking the `Github` icon on the appchain page
+>`<Appchain GitHub Repo>`, o repositório GitHub da appchain. Navegue nele, clicando no ícone `Github` na página da appchain 
 >
-> `<Appchain>`, the name of the appchain repository
+>`<Appchain>`, o nome do repositório appchain 
 
-After the compilation ends, the appchain node will be generated in the directory `./target/release/`. This step will take a while (10~40 minutes), depending on the hardware configuration of the server.
+Após o término da compilação, o nó appchain será gerado no diretório `./target/release/`. Esta etapa levará um tempo (10~40 minutos), dependendo da configuração do hardware do servidor.
 
-> Note: If it has the compiling errors, you may have to switch to a more recent nightly version of Rust.
+>Nota: Se tiver erros de compilação, você pode ter que mudar para uma versão noturna mais recente do Rust.
 
-### 4. Run the validator node
 
-Run the validator node, please refer to the following command:
+### 4.Executar o nó validator
+
+Execute o nó validador. Por favor, observe o seguinte comando:
 
 ```bash
 ./target/release/<Appchain node> \
@@ -71,11 +82,12 @@ Run the validator node, please refer to the following command:
 --enable-offchain-indexing true
 ```
 
-> `<Appchain node>`, the generated node in the previous step
+>`<Appchain node>`, o nó gerado na etapa anterior
 >
-> `<Your validator name>`，the name of the validator node
+>`<Your validator name>`，o nome do nó validador
 
-You can check whether the validator node complete the synchronization of the chain data, check the log whether there is an similar output as the following:
+Você pode verificar se o nó validador conclui a sincronização dos dados da cadeia e verificar o registro, se há uma saída semelhante à seguinte:
+
 
 ```bash
 2021-09-21 00:12:09 ✨ Imported #54411 (0x3566…3b0e)
@@ -87,12 +99,15 @@ You can check whether the validator node complete the synchronization of the cha
 2021-09-21 00:13:18 💤 Idle (6 peers), best: #54434 (0xba36…ee68), finalized #54431 (0xd194…b319), ⬇ 22.0kiB/s ⬆ 21.9kiB/s
 ```
 
-After the node synchronization, the validator needs to [generate the Session Key](./validator-set-session-keys.md) for the next step [register validator](./validator-register.md).
+Após a sincronização do nó, o validador precisa de [gerar a Session Key](./validator-set-session-keys.md) para a próxima etapa [registrar validador](./validator-register.md).
 
-### Upgrade Validator Node
 
-When the appchain releases a new version of node, validators need to upgrade their validator node. Please follow the **validators-delegators** channel on Discord, the Octopus Network team will publish information about the new version of the appchain node. The validator need to:
+### Atualizar o Nó Validador 
 
-1. Compile the new version of appchain source code to generate a new appchain node;
-2. Stop the validator node before the upgrade;
-3. Launch the validator node with the new appchain node.
+Quando a appchain lança uma nova versão do nó, os validadores precisam atualizar seu nó validador. Por favor, siga o canal **validadores-delegantes** no Discord. A equipe da Octopus Network publicará informações sobre a nova versão do nó appchain. O validador precisa de:
+
+
+
+1. Compilar a nova versão do código fonte appchain para gerar um novo nó appchain;
+2. Parar o nó validador antes da atualização;
+3. Lançar o nó validador com o novo nó appchain.

@@ -25,12 +25,15 @@ module.exports = {
       lang: "zh-CN",
     },
     "/pt/": {
+      title: "Documentação Octopus",
       lang: "pt-BR",
+      description: "WEB3DEV",
     },
   },
 
   themeConfig: {
-    logo: "/logo-blue.png",
+    logo: "/logo-blue-w3d.png",
+    logoDark: "/logo-blue.png",
     lastUpdated: true,
     editLinks: false,
     sidebar: "auto",

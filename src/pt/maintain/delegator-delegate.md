@@ -1,19 +1,19 @@
-## How to Delegate
+## Como delegar
 
-Delegators are one type of participant in the [Staking]((../general/octopus-staking.md)) of Octopus Network. They are able to obtain the staking rewards by delegating their OCT to another type of participant - validators. 
+Os delegantes são um tipo de participante na Rede de  [Staking]((../general/octopus-staking.md)) da Octopus. Eles são capazes de obter as recompensas de staking delegando seus OCTs para outro tipo de participante - os validadores. 
 
-> The delegator does not need to run a validator node, but when looking for a validator to delegate, the delegator should check the stability of the validator node. If there is a problem with the validator, the delegator will not be able to obtain staking rewards.
+> O delegante não precisa executar um nó validador, mas ao procurar um validador para delegar, o delegante deve verificar a estabilidade do nó validador. Se houver um problema com o validador, o delegante não poderá obter recompensas de staking.
 
-The delegation steps are as follows:
+TAs etapas da delegação são as seguintes:
 
-1. Log in to [Octopus Network Mainnet](https://mainnet.oct.network) with your NEAR account, click the **Appchains** tab, select the appchain which you would like to do the staking, and then click it to open the appchain page.
+1. Faça login na [Mainnet da rede Octopus](https://mainnet.oct.network) com sua conta NEAR, clique na guia **Appchains**, sselecione a appchain na qual você gostaria de fazer o staking e clique nela para abrir a página da appchain.
 
-2. Select the validator you want to delegate from the **Validators** list, and then click it to open the `Validator Profile` page.
+2. Selecione o validador que deseja delegar na lista **Validators**, e clique nele para abrir a página `Validator Profile`.
 
-![delegator open](../images/maintain/delegator_open.jpg)
+![delegator open](https://docs.oct.network/assets/img/delegator_open.def83ad6.jpg)
 
-3. Click the `+ Delegate` button on the `Validator Profile` page, input the amount of OCT you want to delegate on the pop-up page, and then click the `Deposit` button.
+3. Clique no botão `+ Delegate` na página `Validator Profile`, insira a quantidade de OCT que deseja delegar na página pop-up e clique no botão `Deposit`.
 
-![delegator delegate](../images/maintain/delegator_delegate.jpg)
+![delegator delegate](https://docs.oct.network/assets/img/delegator_delegate.b15f30be.jpg)
 
-The delegation will become active in the next reward cycle (~1 day), and then the delegator will obtain the staking rewards.
+A delegação ficará ativa no próximo ciclo de recompensas (~ 1 dia) e, em seguida, o delegante obterá as recompensas de staking.

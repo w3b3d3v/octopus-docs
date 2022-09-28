@@ -1,7 +1,7 @@
-## Frequently Asked Questions (FAQs)
+## Perguntas frequentes (FAQs)
 
-*This FAQ focuses on technical questions for users interested in developing Octopus Appchain. If you have more general questions, please search for the answers in our [Octopus Network FAQ](https://oct.network/#faqs). Furthermore, feel free to ask questions on [Octopus Discord](https://discord.gg/6GTJBkZA9Q).*
+*Esta FAQ se concentra em questões técnicas para usuários interessados ​​em desenvolver uma Appchain Octopus. Se você tiver perguntas mais genéricas, procure as respostas em nossas [Perguntas frequentes da Octopus Network](https://oct.network/#faqs). Além disso, sinta-se à vontade para fazer perguntas no [Discord da Octopus](https://discord.gg/6GTJBkZA9Q).*
 
-**Does the Octopus Network have Collators like Polkadot?**
+**A Octopus Network tem Collators (coletores) como a Polkadot?**
 
-No. The collators in Polkadot maintain parachain by collecting parachain transactions and producing state transition proofs for relaychain/Polkadot validators. In Octopus Network, each appchain is an **independent** blockchain, there are validator nodes of the appchain in the Octopus network, which collect and verify the transactions of the appchain. These validator nodes are run by OCT holders who stake OCTs to provide security for the appchain.
+Não. Os coletores da Polkadot mantêm a parachain coletando transações de parachain e produzindo provas de transição de estado para validadores da relaychain/Polkadot. Na Octopus Network, cada appchain é uma blockchain **independente**, existem nós validadores da appchain na rede Octopus, que coletam e verificam as transações da appchain. Esses nós validadores são executados por detentores de OCT que fazem stake de OCTs para fornecer segurança para a appchain.

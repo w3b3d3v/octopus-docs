@@ -1,43 +1,49 @@
-## Automatic deployment with Digital Ocean 
+## Implantação Automática com Digital Ocean
 
-> If no Digital Ocean account, please firstly [create and setup Digital Ocean account](https://docs.digitalocean.com/products/getting-started/)
+>Se não tiver uma conta Digital Ocean, primeiro [crie e configure a conta Digital Ocean](https://docs.digitalocean.com/products/getting-started/)
 >
-> To create [Digital Ocean Access Token](https://docs.digitalocean.com/reference/api/create-personal-access-token/)
+>Para criar um [token de acesso da Digital Ocean](https://docs.digitalocean.com/reference/api/create-personal-access-token/)
 >
-> **Note**: 
-> 
-> Please remember the **Token Name**, and then timely copy and save the personal **Access Token**. If the Token expires, please create a new Access Token with the same Token Name. If using a new Digital Ocean account, please create the Access Token with a new Token Name.
+>**Nota**:
+>
+>Lembre-se do **Nome do Token** e, em seguida, copie e salve o **Token de Acesso** pessoal. Se o Token expirar, crie um novo Token de Acesso com o mesmo Nome do Token. Se estiver usando uma nova conta da Digital Ocean, crie o Token de Acesso com um novo Nome de Token.
 
-Log in to the Octopus Network [mainnet](https://mainnet.oct.network) with the NEAR account created in [Generate Validator Account](./validator-generate-keys.md).
+Faça login na [rede principal](https://mainnet.oct.network/) da Octopus Network com a conta NEAR criada em [Gerar conta do validador](validator-generate-keys.md).
 
-![validator login](../images/maintain/validator_login.jpg)
+![https://docs.oct.network/assets/img/validator_login.acdac949.jpg](https://docs.oct.network/assets/img/validator_login.acdac949.jpg)
 
-Click the `Appchains` and select the appchain which would like to be a validator, click it to open the appchain page, then perform the following operations:
+Clique em `Appchains` e selecione a appchain que gostaria de usar como validador, clique nela para abrir a página da appchain e execute as seguintes operações:
 
-1. In the **My Node** area of ​​the appchain page, input your `Token Name` in the `Digital Ocean Token Name` input box, then click `Deploy`;
 
-![do token name](../images/maintain/validator_do_tokenname.jpg)
 
-2. The deployed Digital Ocean Droplet configuration information and approximate cost will be displayed in the **My Node** region. After confirmation, please input your `Access Token` in `Token` input box and select the deployment area in the `Deploy region` drop-down box, then click `Confirm`;
+1. Na área **My Node** da página da appchain, insira seu `Token Name` na caixa de entrada `Digital Ocean Token Name` e clique em `Deploy`;
 
-![do token](../images/maintain/validator_do_token.jpg)
+![https://docs.oct.network/assets/img/validator_do_tokenname.fa7ad071.jpg](https://docs.oct.network/assets/img/validator_do_tokenname.fa7ad071.jpg)
 
-**Note**: The Token will only be used for this deployment and will not be stored anywhere.
 
-3. In the **My Node** area, the node status is `Applying` which means the automatic deployment service is deploying the node.
 
-![validator applying](../images/maintain/validator_do_applying.jpg)
+2. As informações de configuração implantadas do Digital Ocean Droplet e o custo aproximado serão exibidos na região **My Node**. Após a confirmação, insira seu `Access Token` na caixa de entrada `Token` e selecione a área de implantação na caixa suspensa `Deploy Region` e clique em `Confirm`;
 
-Please wait for about 3~5 minutes, the node status will change to `Syncing` which means the validator node is synchronizing the block data of the appchain. The earlier the appchain is online, the longer the node synchronization time will be. please wait patiently.
+![https://docs.oct.network/assets/img/validator_do_token.a16110f9.jpg](https://docs.oct.network/assets/img/validator_do_token.a16110f9.jpg)
 
-![validator syncing](../images/maintain/validator_do_syncing.jpg)
+**Nota**: O Token será usado apenas para esta implantação e não será armazenado em nenhum lugar.
 
-To check the synchronization of nodes, please refer to [Monitor Node](./monitor-node.md).
 
-After the node synchronization, the status in the **My Node** area will change to `Running`.
 
-![validator running](../images/maintain/validator_do_running.jpg)
+3. Na área **My Node**, o status do nó é `Applying`, o que significa que o serviço de implantação automática está implantando o nó.
 
-For the automatically deployed validator node, the validator can click `...` in the **My Node** area, and select `Instance Info` to check the hardware status information (such as CPU, hard disk, memory) of the running validator node instance.
+![https://docs.oct.network/assets/img/validator_do_applying.89646b5c.jpg](https://docs.oct.network/assets/img/validator_do_applying.89646b5c.jpg)
 
-At the `Running` status, the validator can proceed to the next step [register validator](./validator-register.md).
+Aguarde cerca de 3 a 5 minutos, o status do nó mudará para `Syncing`, o que significa que o nó validador está sincronizando os dados do bloco da appchain. Quanto mais cedo a appchain estiver online, maior será o tempo de sincronização do nó. Por favor, espere pacientemente.
+
+![https://docs.oct.network/assets/img/validator_do_syncing.235f7fa4.jpg](https://docs.oct.network/assets/img/validator_do_syncing.235f7fa4.jpg)
+
+Para verificar a sincronização de nós, consulte [Nó de Monitoramento](monitor-node.md).
+
+Após a sincronização do nó, o status na área **My Node** mudará para `Running`.
+
+![https://docs.oct.network/assets/img/validator_do_running.db66b145.jpg](https://docs.oct.network/assets/img/validator_do_running.db66b145.jpg)
+
+Para o nó validador implantado automaticamente, o validador pode clicar em `...` na área **My Node** e selecionar `Instance Info` para verificar as informações de status do hardware (como CPU, disco rígido, memória) da instância do nó validador em execução.
+
+No status `Running`, o validador pode prosseguir para a próxima etapa, [registrar validador](validator-register.md).

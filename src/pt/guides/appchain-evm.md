@@ -1,76 +1,94 @@
-## Appchain EVM Compatible
 
-The [Barnacle EVM](https://github.com/octopus-network/barnacle/tree/release-v0.9.18-evm) is an EVM compatible appchain development template provided by Octopus Network. It uses the [Frontier](https://github.com/paritytech/frontier) developed by Parity.
+## Compatibilidade de Appchain com a EVM
 
-The developer team can use this template to develop an EVM-compatible Appchain. It supports the team directly deploying their DApp written by Solidity as an Appchain running in the Octopus Network. The Appchain benefits from being an autonomous blockchain. Also, it obtains what [Octopus Network](https://oct.network/) provides flexible leased security, out-of-the-box interoperability, rich infrastructure services, and an active community.
+A [EVM Barnacle ](https://github.com/octopus-network/barnacle/tree/release-v0.9.18-evm)é uma EVM compatível com o template de desenvolvimento  appchain fornecido pela rede Octopus. Ela usa o [Frontier](https://github.com/paritytech/frontier) desenvolvido pela Parity.
 
-The Barnacle EVM Appchain is **Running** in the [Octopus Testnet](https://testnet.oct.network/appchains). The RPC connection of the Barnacle EVM Appchain:
+A equipe de desenvolvedores pode usar este modelo para desenvolver uma Appchain compatível com EVM. Ele apoia o time na implantação direta de seu DApp escrito em Solidity como uma Appchain em execução na Rede Octopus. A Appchain se beneficia de ser uma blockchain autônoma. Além disso, ela obtém o que a [Octopus Network](https://oct.network/) fornece, ou seja, segurança flexível cedida, interoperabilidade imediata, serviços de infraestrutura ricos e uma comunidade ativa.
 
-* RPC: https://gateway.testnet.octopus.network/barnacle-evm/wj1hhcverunusc35jifki19otd4od1n5
+A EVM Barnacle da Appchain está sendo executada na [Octopus Testnet](https://testnet.oct.network/appchains). A conexão RPC da EVM Barnacle da Appchain:
+
+
+
+* RPC: [https://gateway.testnet.octopus.network/barnacle-evm/wj1hhcverunusc35jifki19otd4od1n5](https://gateway.testnet.octopus.network/barnacle-evm/wj1hhcverunusc35jifki19otd4od1n5)
 * Chain Id: 1281
 * Symbol: EBAR
 
-
-## How to Use Octopus Barnacle EVM
- 
-### A walkthrough on how you can use Octopus Network's Barnacle EVM
-
-Ethereum has become the Fat-Hub of the blockchain ecosystem. Follow the money - as they say. All interoperable blockchain projects that seek growth must connect to the Ethereum network because most Web 3.0 assets are there. Most independent blockchain projects have some EVM compatibility system in place. Some prefer bridges, and others create an EVM-compatible environment on their native chain. The goal of having an EVM-compatible Appchain is to streamline the environment for the validators and app users. App users use EVM toolsets like MetaMask, but validators still can use the Polkadot.js plugin wallet.
-
-For example, Parity, the company behind Substrate, created the Frontier pallet to allow Substrate-based blockchains to have EVM compatible smart contracts within their Substrate blockchains. A Polkadot Parachain bases itself on the promise of 100% EVM compatibility, Moonbeam.
-
-Octopus Network also supports a basic level of EVM compatibility. Because Appchains are Substrate chains on NEAR, you can use Parity's Frontier pallets directly in your Appchain. The base template of Octopus' EVM compatible blockchain is the [Barnacle EVM](https://github.com/octopus-network/barnacle/tree/release-v0.9.18-evm) using Parity's Frontier pallet.
-
-To give you a better feeling of how it works, you can follow along in this tutorial.
-
-### Setting Up A Local Barnacle EVM
-
-Barnacle EVM is a great alternative to test your Solidity smart contracts on a local blockchain environment without having to deploy the contracts on a Testnet. 
+## Como usar a EVM Barnacle da Octopus
 
 
-First, you need to clone the original Barnacle repository:
+ 
+
+
+### Uma visão de como você pode usar a EVM Barnacle da Rede Octopus
+
+A Ethereum tornou-se o _Fat-Hub_ do ecossistema blockchain. Siga o dinheiro - como eles dizem. Todos os projetos blockchain interoperáveis que buscam o crescimento devem se conectar à rede Ethereum porque a maioria dos ativos da Web 3.0 estão lá. A maioria dos projetos blockchain independentes tem algum sistema de compatibilidade EVM em vigor. Alguns preferem pontes e outros criam um ambiente compatível com EVM em sua cadeia nativa. O objetivo de ter uma Appchain compatível com EVM é agilizar o ambiente para os validadores e usuários de app. Os usuários de aplicativos usam conjuntos de ferramentas EVM, como a MetaMask, mas os validadores ainda podem usar a carteira de plugins Polkadot.js.
+
+Por exemplo, a Parity, empresa por trás do Substrate, criou o palete Frontier para permitir que as blockchains baseadas no Substrate tivessem contratos inteligentes compatíveis com EVM dentro de suas blockchains Substrate. Uma Parachain Polkadot se baseia na promessa de 100% de compatibilidade com EVM, a Moonbeam.
+
+A rede Octopus também suporta um nível básico de compatibilidade com a EVM. Como as Appchains são cadeias Substrate na NEAR, pode-se usar paletes Frontier da Parity diretamente na sua Appchain. O modelo básico de blockchain compatível com EVM da Octopus é o [EVM Barnacle](https://github.com/octopus-network/barnacle/tree/release-v0.9.18-evm), usando o palete Frontier da Parity.
+
+Para dar a você uma melhor noção de como funciona, você pode acompanhar neste tutorial.
+
+
+### 
+**Configurando uma EVM Barnacle Local**
+
+
+### 
+A EVM Barnacle é uma ótima alternativa para testar seus contratos inteligentes Solidity em um ambiente de blockchain local, sem ter que fazer deploy dos contratos em uma Testnet. 
+
+Primeiro, você precisa clonar o repositório Barnacle original:
+
 
 ```
 git clone https://github.com/octopus-network/barnacle
 ```
 
 
-Then, go into the cloned directory and enter the EVM branch.
+Em seguida, entre no diretório clonado e entre na ramificação EVM.
+
+
 ```
 cd barnacle
 git switch release-v0.9.18-evm
 ```
 
-The current version of the Barnacle EVM is v0.9.18, but it will increment future updates. You can check the active branches within the Barnacle repository for the most recent updates.
 
-Barnacle EVM is a predisposed environment, and you don't need any fancy configurations. You can directly run the blockchain, and it will be ready to go!
+A versão atual da EVM Barnacle é a v0.9.18, mas ela irá incrementar as atualizações futuras. Você pode verificar ramificações ativas dentro do repositório Barnacle para as atualizações mais recentes.
+
+A EVM Barnacle é um ambiente preparado e você não precisa de nenhuma configuração sofisticada. Você pode executar diretamente a blockchain e ela estará pronta para funcionar!
+
 
 ```
 cargo build --release
 ./target/release/appchain-barnacle --dev --enable-offchain-indexing true
 ```
 
-When running the blockchain, don't forget to add the `--dev` flag to run locally.
-For more details you can refer the document of [README](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/README.md).
 
-Congratulations, you ran your first Barnacle EVM! You can connect directly to the EVM through `http://127.0.0.1:9933`.
+Ao executar a blockchain, não se esqueça de adicionar o marcador `--dev` para executar localmente. Para mais detalhes você pode consultar a documentação do [README](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/README.md).
 
-> Note: use the port `9933`. It will be different from the default Substrate Websocket port `9944`.
+Parabéns, você rodou o seu primeiro EVM Barnacle! Você pode se conectar diretamente à EVM através de `http://127.0.0.1:9933`.
 
-### Deploying Contracts to the Barnacle EVM Using Hardhat
+>Nota: use o port `9933`. Será diferente do padrão Substrate Websocket port `9944`.
 
-Deploying smart contracts to Barnacle EVM is easy. You can use the smart contract templates provided within `docs/example` to simplify the process. Hardhat is an Ethereum development environment built using NodeJS, so to use it, you would need to have NodeJS and NPM pre-installed.
 
-Enter the `docs/example` repository, and install the dependencies using NPM:
+### Implantando contratos na EVM Barnacle usando Hardhat
+
+A implantação de contratos inteligentes para a EVM Barnacle é fácil. Você pode usar os templates de contratos inteligentes fornecidos dentro de `docs/example` para simplificar o processo. O Hardhat é um ambiente de desenvolvimento da Ethereum criado com o NodeJS, então, para usá-lo, você vai precisar ter o NodeJS e NPM pré-instalado.
+
+Entre no repositório `docs/example` e instale as dependências usando o NPM:
+
 
 ```
 cd docs/example
 npm i
 ```
 
-Within the directory, you will see a `contracts` and `.maintain` folder. You can see the ready-to-use smart contracts within the `contracts` folder. `.maintain` will house all the necessary scripts, including deployment and testing.
 
-The Hardhat project template needs a `.env` file to function:
+Dentro do diretório, você verá um `contracts` e a pasta `.maintain`. Você pode ver os contratos prontos para uso dentro da pasta `contracts`. A pasta `.maintain` hospedará todos os scripts necessários, incluindo a implantação e os testes.
+
+O template do projeto Hardhat precisa de um arquivo `.env` para funcionar:
+
 
 ```
 BARNACLE_RPC_URL=http://127.0.0.1:9933
@@ -78,41 +96,52 @@ BARNACLE_DEPLOYER_PRIVATE_KEY=*private key here*
 BARNACLE_ACCOUNT_PRIVATE_KEY=*private key here*
 ```
 
-There are three environment variables that you are required to supply. The environment variables are used in the `hardhat.config.js` file.
 
-If you open the file, you will notice a `chainId` parameter. The `chainId` is for signing transactions within the network. Barnacle EVM `chainId` is `1281`. You can [view it here](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/runtime/src/lib.rs#L752).
+Há três variáveis de ambiente que você é obrigado a fornecer. As variáveis de ambiente são utilizadas no arquivo `hardhat.config.js`.
 
-After supplying the private keys, you need to print out your account addresses since the address will be different from other chains. You need to connect to Barnacle EVM and retrieve the addresses manually using a script.
+Se você abrir o arquivo, notará um parâmetro `chainId`. O `chainId` serve para assinatura de transações dentro da rede. O `chainId` da EVM Barnacle é `1281`. Você pode [ver isso aqui](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/runtime/src/lib.rs#L752).
+
+Depois de fornecer as chaves privadas, você precisa imprimir os endereços de sua conta, já que o endereço será diferente do de outras cadeias. Você precisa se conectar à EVM Barnacle e recuperar os endereços manualmente usando um script.
+
 
 ```
 npx hardhat run .maintain/print-addresses.js --network barnacle
 ```
 
-Your command will print out the public addresses for your public keys:
+
+Seu comando irá imprimir os endereços públicos para suas chaves públicas:
+
 
 ```
 Deployer private key account address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 Executor private key account address: 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
 ```
 
-You can modify the snippet below within the [`node/src/chain_spec.rs`](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/node/src/chain_spec.rs) file to add your pre-funded accounts.
+
+Você pode modificar o trecho abaixo dentro do arquivo <code>[node/src/chain_spec.rs](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/node/src/chain_spec.rs)</code> para adicionar suas contas pré-financiadas.
+
 
 ```rust
-// Pre-funded accounts
+// Contas pré-financiadas
 Some(
   vec![AccountId::from_str("f24FF3a9CF04c71Dbc94D0b566f7A27B94566cac").unwrap()],
 )
 ```
-Also, you can modify the sudo account as you need.
+
+
+Além disso, você pode modificar a conta _sudo_ conforme sua necessidade.
+
 
 ```rust
-// Sudo account
+// Conta sudo
 AccountId::from_str("f24FF3a9CF04c71Dbc94D0b566f7A27B94566cac").unwrap(),
 ```
 
-Note that there are two identical configurations in the file, but the difference is the running environment. Modify the configurations in `development_config()` if you run as development environment. Modify the configurations in `local_testnet_config()` if you run as local testnet environment.
 
-Then, go to your project's root directory, restart the Barnacle EVM and deploy the smart contracts:
+Observe que existem duas configurações idênticas no arquivo, mas a diferença é o ambiente de execução. Modifique as configurações em `development_config(),` se você executa como ambiente de desenvolvimento. Modifique as configurações em `local_testnet_config(),` se você executa como ambiente de testnet local.
+
+Depois, vá até o diretório raiz de seu projeto, reinicie a EVM Barnacle e faça deploy dos contratos inteligentes:
+
 
 ```
 cd ~/*work directory*/barnacle
@@ -122,7 +151,9 @@ cd docs/example
 npx hardhat run .maintain/deployment.js --network barnacle
 ```
 
-The deployment script also has tests in them, and it should return something like this:
+
+O script de implantação também tem testes neles, e deve retornar algo assim:
+
 
 ```
 Deploying to network barnacle http://127.0.0.1:9933
@@ -138,42 +169,50 @@ Executor ERC20 Account Balance:  50000000000000000000
 Executor ERC20 Account Balance:  80000000000000000000
 ```
 
-There you go! You deployed your first (two) smart contracts on Barnacle EVM, an ERC20 token, and a simple escrow smart contract.
 
-You can interact with your smart contract like in any other network using `ethers.js`; you can look to the `.maintain/deployment.js` script for examples.
+Aí está! Você implantou seu primeiro (dois) contrato inteligente na EVM Barnacle, um token ERC20 e um simples contrato inteligente de depósito.
 
-### How to Connect Barnacle EVM to MetaMask
+Você pode interagir com seu contrato inteligente como em qualquer outra rede, usando `ethers.js`; você pode olhar o script `.maintain/deployment.js` como exemplos.
 
-You can connect your MetaMask account to Barnacle EVM.
 
-First, you need to open MetaMask find the "Add Network" button.
+### Como Conectar a EVM Barnacle com a MetaMask
 
-![Add network](../images/guides/appchain-evm/image-1.png)
+Você pode conectar sua conta MetaMask à EVM Barnacle.
 
-Then fill in the Barnacle EVM details. Name the network "Barnacle EVM", then insert the default Barnacle EVM RPC "http://127.0.0.1:9933".
+Primeiro, você precisa abrir a MetaMask e encontrar o botão "Adicionar rede".
 
-The chain ID of this particular Barnacle EVM is [1281](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/runtime/src/lib.rs#L752).
+![Add network](https://docs.oct.network/assets/img/image-1.142c6cff.png)
 
-The barnacle EVM token named "EBAR" defaultly. However, you can name the native token "DOLLAR".
 
-After you filled in the form, click "Save".
+Em seguida, preencha os detalhes da EVM Barnacle. Nomeie a rede "EVM Barnacle", depois insira o RPC EVM padrão da EVM Barnacle  "[http://127.0.0.1:9933](http://127.0.0.1:9933/)".
 
-![Describe network](../images/guides/appchain-evm/image-2.png)
+A ID da cadeia desta EVM Barnacle em particular é [1281](https://github.com/octopus-network/barnacle/blob/release-v0.9.18-evm/runtime/src/lib.rs#L752).
 
-You might need to wait a second for the MetaMask to connect.
+O token da EVM barnacle é  chamado "EBAR" de forma predefinida. Contudo, você pode nomear o token nativo de "DOLLAR".
 
-![Waiting...](../images/guides/appchain-evm/image-3.png)
+Depois de preencher o formulário, clique em "Salvar".
 
-If you are successfully connected you should see your default funds.
+![Describe network](https://docs.oct.network/assets/img/image-2.98777215.png)
 
-![Waiting...](../images/guides/appchain-evm/image-4.png)
 
-Barnacle EVM uses H160 addresses and is compatible to the Ethereum EVM you can use your Ethereum wallet private keys on Barnacle just fine.
+Você pode ter que esperar um segundo para conectar com a MetaMask.
 
-### Conclusion
 
-The Barnacle EVM is the basis template for your EVM compatible Appchain. You can deploy your smart contracts in Barnacle EVM for testing just like any other Testnet environment.
+![Waiting...](https://docs.oct.network/assets/img/image-3.5b49a0f5.png)
 
-You can use any Ethereum development tools to interact with Barnacle EVM. In this walkthrough, you used Hardhat. But there are other environments that you can use, including Truffle, Remix, Brownie, and many more. You can read other examples in the Moonbeam docs.
 
-Need more tutorials? Please refer to the [tutorials](https://docs.moonbeam.network/builders/build/eth-api/) from the Moonbeam Docs.
+Se você estiver conectado com sucesso, você deve ver seus fundos padrão.
+
+![Waiting...](https://docs.oct.network/assets/img/image-4.c62cc131.png)
+
+
+A EVM Barnacle usa endereços H160 e é compatível com a EVM Ethereum. Você pode usar suas chaves privadas de sua carteira Ethereum na Barnacle muito bem.
+
+
+### Conclusão
+
+A EVM Barnacle é o template básico para a sua Appchain compatível com EVM. Você pode implantar seus contratos inteligentes na EVM Barnacle para testes, como em qualquer outro ambiente Testnet.
+
+Você pode usar qualquer ferramenta de desenvolvimento Ethereum para interagir com a EVM Barnacle. Nesta caminhada, você usou o Hardhat. Mas existem outros ambientes que podem ser usados, incluindo Truffle, Remix, Brownie, e muitos outros. Você pode ler outros exemplos nos documentos da Moonbeam.
+
+Precisa de mais tutoriais? Por favor, consulte os [tutoriais](https://docs.moonbeam.network/builders/build/eth-api/) da Moonbeam Docs.

@@ -1,43 +1,51 @@
-## Automatic deployment with AWS
+## Implantação Automática com a AWS
 
-> If no AWS account, please firstly [create and setup AWS account](https://aws.amazon.com/getting-started/guides/setup-environment/?nc1=h_ls)
+>Se você não tem uma conta AWS, por favor, primeiramente [crie e configure a conta AWS](https://aws.amazon.com/getting-started/guides/setup-environment/?nc1=h_ls)
 >
-> To create [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+>Para criar a [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
 
-Log in to the Octopus Network [mainnet](https://mainnet.oct.network) with the NEAR account created in [Generate Validator Account](./validator-generate-keys.md).
+Faça login na   [mainnet](https://mainnet.oct.network/) da Octopus Network[ ](https://mainnet.oct.network/)com a conta NEAR criada em  [Gerar Conta ](validator-generate-keys.md)de Validador.
 
-![validator login](../images/maintain/validator_login.jpg)
 
-Click the `Appchains` and select the appchain which would like to be a validator, click it to open the appchain page, then perform the following operations:
+![validator login](https://docs.oct.network/assets/img/validator_login.acdac949.jpg)
 
-1. In the **My Node** area of ​​the appchain page, input your `AWS Access Key` in the `Access Key` input box, then click `Deploy`;
+Clique em `appchains` e selecione a appchain que você quer que seja um validador, clique nela para abrir a página da appchain, depois realize as seguintes operações:
 
-![aws access key](../images/maintain/validator_aws_accesskey.jpg)
 
-2. The deployed AWS instance configuration information and approximate cost will be displayed in the **My Node** region. After confirmation, please input your `AWS Secret Key` in `Secret Key` input box and select the deployment area of the AWS instance in the `Deploy region` drop-down box, then click `Confirm`;
 
-![aws secret key](../images/maintain/validator_aws_secretkey.jpg)
+1. Na área **My Node** da página da appchain, insira sua `AWS Access Key` na caixa de entrada  `Access Key`, depois clique em `Deploy`;
 
-**Note**: The AWS Secret Key will only be used for this deployment and will not be stored anywhere.
 
-3. In the **My Node** area, the node status is `Applying` which means the automatic deployment service is deploying the node.
+![aws access key](https://docs.oct.network/assets/img/validator_aws_accesskey.cb38f0c4.jpg)
 
-![validator applying](../images/maintain/validator_aws_applying.jpg)
+2. As informações de configuração da instância AWS implantadas e o custo aproximado serão exibidos na região **My Node**. Após a confirmação, favor inserir a sua `AWS Secret Key` na caixa de entrada `Secret Key` e selecione a área de implantação da instância da AWS na caixa suspensa `Deploy region` e depois clique em `Confirm`;
 
-Please wait for about 3~5 minutes, the node status will change to `Syncing` which means the validator node is synchronizing the block data of the appchain. The earlier the appchain is online, the longer the node synchronization time will be. please wait patiently.
+![aws secret key](https://docs.oct.network/assets/img/validator_aws_secretkey.f9ebccc1.jpg)
 
-![validator syncing](../images/maintain/validator_aws_syncing.jpg)
 
-To check the synchronization of nodes, please refer to [Monitor Node](./monitor-node.md).
+**Nota:** A chave secreta AWS só será usada para esta implantação e não será armazenada em nenhum lugar.
 
-After the node synchronization, the status in the **My Node** area will change to `Running`.
 
-![validator running](../images/maintain/validator_aws_running.jpg)
 
-For the automatically deployed validator node, the validator can click `...` in the **My Node** area, and select `Instance Info` to check the hardware status information (such as CPU, hard disk, memory) of the running validator node instance.
+3. Na área **My Node**, o status do nó é `Applying`, o que significa que o serviço de implantação automática está implantando o nó.
 
-At the `Running` status, the validator can proceed to the next step [register validator](./validator-register.md).
+![validator applying](https://docs.oct.network/assets/img/validator_aws_applying.962d51a8.jpg)
 
-### Change AWS instance type
+Por favor, aguarde cerca de 3~5 minutos. O status do nó mudará para `Syncing`, o que significa que o nó validador está sincronizando os dados do bloco da appchain. Quanto mais cedo a appchain estiver on-line, mais longo será o tempo de sincronização do nó. Por favor, aguarde pacientemente.
 
-The validator can resize the AWS instance by changing the instance type as the appchain requirement change. Click the link to the right of `Instance` in the **My Node** region to open the console of the automatically deployed AWS EC2 instance, then, please refer to AWS EC2 [Changing the Instance Type](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/ec2-instance-resize.html) to complete the operation.
+![validator syncing](https://docs.oct.network/assets/img/validator_aws_syncing.7e68791e.jpg)
+
+Para verificar a sincronização dos nós, por favor consulte [Nó de Monitoramento](monitor-node.md).
+
+Após a sincronização do nó, o status na área **My Node** mudará para `Running`.
+
+![validator running](https://docs.oct.network/assets/img/validator_aws_running.6af33455.jpg)
+
+Para o nó validador implantado automaticamente, o validador pode clicar `...` na área **My Node**, e selecionar `Instance Info` para verificar as informações de status do hardware (como CPU, disco rígido, memória) da instância do nó validador em execução.
+
+No status `Running`, o validador pode prosseguir para o próximo passo [registrar validador](validator-register.md).
+
+
+### Mudar o tipo de instância da AWS 
+
+O validador pode redimensionar a instância da AWS mudando o tipo de instância à medida que os requisitos da appchain mudam. Clique no link à direita de `Instance` na região **My Node** para abrir o console da instância AWS EC2 implantada automaticamente e então, por favor consulte a  AWS EC2 [Mudando o tipo de instância](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/ec2-instance-resize.html) para concluir a operação.

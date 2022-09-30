@@ -1,45 +1,50 @@
-## Deploy Validator Node
+## Implantar Nó Validador
 
-In order to simplify the deployment of the validator node, the Octopus Network team provides an automatic deployment service for the validator node. Currently, it supports:
+Para simplificar a implantação do nó validador, a equipe da Octopus Network fornece um serviço de implantação automática para o nó validador. Atualmente, ele suporta: 
 
-* [AWS](./validator-deploy-aws.md)
-* [Digital Ocean](./validator-deploy-do.md)
+* [AWS](validator-deploy-aws.md)
 
-Also, the validator can choose to [manually deploy the validator node](./validator-deploy-manually.md).
+* [Digital Ocean](validator-deploy-do.md) 
 
-### Hardware configuration
+Além disso, o validador pode optar por [implantar manualmente o nó validador](./validator-deploy-manually.md).
 
-The configuration and approximate cost of each Appchain validator node which is deployed via the automatic deployment service.
+### Configuração de hardware
+
+A configuração e o custo aproximado de cada nó validador da Appchain que é implantado por meio do serviço de implantação automática.
 
 **AWS**
 
-| Appchain | EC2 Instance Type  | Storage | Data Transfer | Total cost per month |
+| Appchain | Tipo de instância EC2  | Armazenamento | Transferência de dados | Custo total mensal |
 |------|------|------|------|------|
-| debionetwork | t3.small<br/>2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
-| myriad | t3.small<br/>2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
-| deip | t3.small<br/>2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
-| atocha | t3.small<br/>2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
-| fusotao | c5.large<br/>4 GB Memory / 2 vCPUs | 250 GB | 4500 GB | $509 |
-| discovol | t3.small<br/>2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
+| debionetwork | t3.small 2 GB Memory / 2 vCPUs  | 120 GB | 100 GB | $45 |
+| myriad | t3.small 2 GB Memory / 2 vCPUs  | 120 GB | 100 GB | $45 |
+| deip | t3.small 2 GB Memory / 2 vCPUs  | 120 GB | 100 GB | $45 |
+| atocha | t3.small 2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
+| fusotao | c5.large 4 GB Memory / 2 vCPUs  | 250 GB | 4500 GB | $509 |
+| discovol | t3.small 2 GB Memory / 2 vCPUs | 120 GB | 100 GB | $45 |
 
 
 **Digital Ocean**
 
-| Appchain | Droplet  | Storage | Data Transfer | Total cost per month |
+| Appchain | Droplet  | Armazenamento | Transferência de dados | Custo total mensal |
 |------|------|------|------|------|
-| debionetwork | 2 GB Memory / 2 vCPUs | 120 GB | 3 TB | $33 |
-| myriad | 2 GB Memory / 2 vCPUs | 120 GB | 3 TB | $33 |
-| deip | 2 GB Memory / 2 vCPUs | 120 GB | 3 TB | $33 |
+| debionetwork | 2 GB Memory / 2 vCPUs  | 120 GB | 3 TB | $33 |
+| myriad | 2 GB Memory / 2 vCPUs  | 120 GB | 3 TB | $33 |
+| deip | 2 GB Memory / 2 vCPUs  | 120 GB | 3 TB | $33 |
 | atocha | 2 GB Memory / 2 vCPUs | 120 GB | 3 TB | $33 |
-| fusotao | 8 GB Memory / 4 vCPUs  | 250 GB | 5 TB | $81 |
-| discovol | 2 GB Memory / 2 vCPUs | 120 GB | 3 TB | $33 |
+| fusotao |  8 GB Memory / 2 vCPUs  | 250 GB | 5 TB | $81 |
+| discovol |  2 GB Memory / 2 vCPUs | 120 GB | 3 TB | $33 |
 
-### Change VPS provider
+### Alterar provedor VPS
 
-For the validator who need to change the VPS provider of the deployed node, please follow these steps:
+Para o validador que precisa alterar o provedor VPS do nó implantado, siga estas etapas:
 
-1. Keep the old validator node running;
-2. Deploy a new validator node. For the node which was deployed via the automatic deployment service, please `Clear Local Storage` if needed.
-![validator clear local](../images/maintain/validator_clear_local.jpg)
-3. When the new node done the synchronization, please [set the Session Key](./validator-register.md#set-session-key) for the new validator node;
-4. The validator could [stop](./validator-register.md#stop-the-validator-node) the old validator node until the next reward cycle.
+1. Mantenha o nó validador antigo em execução;
+
+2. Implante um novo nó validador. Para o nó que foi implantado por meio do serviço de implantação automática, por favor, `Clear Local Storage` se necessário.
+
+![validator login](https://docs.oct.network/assets/img/validator_clear_local.86b686a4.jpg)
+
+3. Quando o novo nó fizer a sincronização, [defina a Chave de Sessão](https://docs.oct.network/maintain/validator-register.html#set-session-key) para o novo nó validador;
+
+4. O validador pode [parar](https://docs.oct.network/maintain/validator-register.html#stop-the-validator-node) o antigo nó validador até o próximo ciclo de recompensa.

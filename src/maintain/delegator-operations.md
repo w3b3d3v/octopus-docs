@@ -1,39 +1,40 @@
-## Delegator operations
+## Operações do Delegante
 
-After the delegation, the delegator could select the delegated validator and click `Delegated` to open the `Validator Profile` page.
+Após a delegação, o delegante poderia selecionar o validador delegado e clicar em `Delegated` para abrir a página `Validator Profile`.
 
-![delegator delegated](../images/maintain/delegator_delegated.jpg)
+![delegator delegated](https://docs.oct.network/assets/img/delegator_delegated.bbf68ab0.jpg)
 
-Delegator can do the below operations on the `Validator Profile` page.
+O delegante pode fazer as operações abaixo na página `Validator Profile`.
 
-* Increase/Decrease delegation
-* Claim rewards
-* Unbond delegation
+* Aumentar/diminuir delegação
+* Reivindicar recompensas
+* Delegação de desvinculação
 
-### Increase/Decrease delegation
+### Aumentar/Diminuir delegação
 
-Click `+` or `-` to increase or decrease the delegation amount on the `Validator Profile` page.
+Clique em `+` ou `-` para aumentar ou diminuir a quantidade de delegação na página `Validator Profile`.
 
-### Claim rewards
+### Reivindicar Recompensas
 
-After a reward cycle (~1 day), the delegator will obtain the staking rewards, which need to be claimed manually. Click the `Rewards` button on the `Validator Profile` page, then select `Delegator Reward` and click `Claim` to claim the rewards.
 
-![delegator claim reward](../images/maintain/delegator_claim_rewards.jpg)
+Após um ciclo de recompensa (~ 1 dia), o delegante obterá as recompensas de staking, que precisam ser reivindicadas manualmente. Clique no botão `Rewards`  na página `Validator Profile`,  selecione `Delegator Reward` e clique em  `Claim` para reivindicar as recompensas.
 
-### Unbond delegation
+![delegator claim reward](https://docs.oct.network/assets/img/delegator_claim_rewards.f6ccc0c5.jpg)
 
-Click the `Unbond Delegation` button on the `Validator Profile` page to perform the unbond delegation operation.
+### Delegação de Desvinculação
 
-> **Note**: After unbond, the staking OCT will have an unbonding period. Before the unbonding period ends, it cannot be withdrawable and you will not obtain any staking rewards.
+Clique no botão `Unbond Delegation` na página `Validator Profile` para realizar a operação de delegação de desvinculação.
 
-![delegator unbond](../images/maintain/delegator_unbond.jpg)
+> **Nota**: Após a delegação de desvinculação, o OCT em staking terá um período de desvinculação. Antes do término do período de desvinculação, ele não pode ser retirado e você não obterá nenhuma recompensa de staking.
 
-### Withdraw OCT
+![delegator unbond](https://docs.oct.network/assets/img/delegator_unbond.0e6ab068.jpg)
 
-It is the same as the validator. Click `...` and select `Withdraw Stakes` on the **My Staking** area.
+### Retirada de OCT em Staking
 
-![unbond withdraw](../images/maintain/unbond_withdraw.jpg)
+É o mesmo que o validador. Clique em `...` e selecione `Withdraw Stakes` na área **My Staking**.
 
-After the unbonding period ends, you can click the `Withdraw` button to withdraw the staked OCT.
+![unbond withdraw](https://docs.oct.network/assets/img/unbond_withdraw.6816eac7.jpg)
 
-![withdraw stakes](../images/maintain/withdraw_stakes.jpg)
+Após o término do período de desvinculação, você pode clicar no botão `Withdraw` para retirar o OCT em staking.
+
+![withdraw stakes](https://docs.oct.network/assets/img/withdraw_stakes.12c81f01.jpg)

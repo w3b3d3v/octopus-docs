@@ -1,60 +1,59 @@
-## Octopus Network Staking
+## Staking na Rede Octopus
 
-The LPoS (Leased Proof-of-Stake) of Octopus Network is to select a group of network maintainers from the OCT holders participating in the staking. The validator with the normal operation will get the rewards, but if it was unable to perform its duties normally, the staked assets will get slashed.
+A LPoS (Prova de Participação Alugada) da Octopus Network consiste em selecionar um grupo de mantenedores de rede dentre os detentores de OCT participantes do staking. O validador com a operação normal receberá as recompensas, mas se não conseguir desempenhar suas funções normalmente, os ativos em stake serão reduzidos.
 
-In staking, there are two roles: validator and delegator. OCT holders can participate in the staking to become:
+No staking, existem dois papéis: validador e delegante. Os  detentores de OCT podem participar do staking para se tornarem:
 
-* Validator
-    - Choose appchain and stake 5,000 OCT as least;
-    - Run the validator node, ensure its availability is as high as possible
-    - The unbond period is 21 days;
-* Delegator
-    - Delegate the OCT to the validator, no other operations are required;
-    - The unbond period is 21 days;
+* Validador
+    - Escolhe a appchain e faz stake de 5.000 OCTs no mínimo;
+    - Executa o nó validador, certifica-se de que sua disponibilidade seja a mais alta possível;
+    - O período de desvinculação é de 21 dias;
+* Delegante
+    - Delega OCT ao validador, não são necessárias outras operações;
+    - O período de desvinculação é de 21 dias;
 
-### Rewards
+### Recompensas
 
-#### Reward Distribution
+#### Distribuição de recompensas
 
-In LPoS, rewards are calculated based on the bias of block generation and recorded per era (approximately 24 hours). If the bias of block generation of a validator reaches the expected 80% in an era, there will be the full reward of this era.
+Na LPoS, as recompensas são calculadas com base no viés de geração de blocos e registradas por era (aproximadamente 24 horas). Se o viés de geração de blocos de um validador atingir os 80% esperados em uma era, haverá a recompensa total dessa era.
 
-Assuming a block is generated every 6 seconds, there will be 14,400 blocks in a day. If there are 100 validators, then one validator is expected to generate 144 blocks. As long as the number of blocks it generates in this era is higher than 144 * 80%, it will get the full reward, otherwise, there will be no reward.
+Supondo que um bloco seja gerado a cada 6 segundos, haverá 14.400 blocos em um dia. Se houver 100 validadores, espera-se que um validador gere 144 blocos. Enquanto o número de blocos gerados nesta era for superior a 144 * 80%, ele receberá a recompensa total, caso contrário, não haverá recompensa.
 
-Also, rewards are distributed based on the staking amount of the validator node, which means that the higher the stake amount, the higher the reward the validator node will receive when they’re 100% available when forming the consensus. For the staking reward of the validator node, the validator gets 20% as a commission fee, and then the remaining staking rewards are distributed between the validator and the delegator in proportion to the staking amount.
+Além disso, as recompensas são distribuídas com base no valor em staking do nó validador, o que significa que quanto maior o valor em stake, maior a recompensa que o nó validador receberá quando estiver 100% disponível ao formar o consenso. Para a recompensa de staking do nó validador, o validador recebe 20% como taxa de comissão e, em seguida, as recompensas de staking restantes são distribuídas entre o validador e o delegante proporcionalmente ao valor do staking.
 
-We assume that: a validator node, the validator stake 10,000 OCT, the delegator A, B, and C respectively stake 3,000 OCT, 5,000 OCT, and 2,000 OCT, and the staking reward of the validator node is 100 XYZ, then the reward distribution is shown in the following table:
+Assumimos que: um nó validador, o validador faz stake de 10.000 OCT, o delegante A, B e C, respectivamente, fazem stake de 3.000 OCT, 5.000 OCT e 2.000 OCT, e a recompensa de staking do nó validador é 100 XYZ, então a distribuição de recompensa é mostrada na tabela a seguir:
 
-|             | Staked (OCT) | Rewards (XYZ) |
+
+|             | Feito stake  (OCT) | Recompensas (XYZ) |
 | ----------- | ------------ | ------------- |
-| Validator 0 | 10000        | 60            |
-| Delegator A | 3000         | 12            |
-| Delegator B | 5000         | 20            |
-| Delegator C | 2000         | 8             |
+| Validador 0 | 10000        | 60            |
+| Delegador A | 3000         | 12            |
+| Delegador B | 5000         | 20            |
+| Delegador C | 2000         | 8             |
 
-#### Claim rewards
+#### Reivindicar recompensas
 
-The validator or delegator needs to manually claim the rewards via Octopus App. The staking reward keeps up to 84 Era, which is approximately 84 days.
+O validador ou delegante precisa reivindicar manualmente as recompensas por meio do aplicativo Octopus. A recompensa de staking mantém-se até 84 Eras, que é aproximadamente 84 dias.
 
-**Warning**: If the validator or delegator does not claim his staking reward within the period, currently, the reward is locked in the contract, and can’t be claimed.
+**Atenção**: Se o validador ou delegante não reivindicar sua recompensa de staking dentro do período, atualmente, a recompensa é bloqueada no contrato e não pode ser reivindicada.
 
-### Auto-unbond
+### Desvincular automaticamente
 
-In LPoS, if the validator does not generate blocks normally within 3 consecutive reward cycles (about 3 days), it will be removed from the validator set. But the existing rewards still can be claimed, and the staked OCTs would be withdrawable after the unbond period.
+Na LPoS, se o validador não gerar blocos normalmente em 3 ciclos consecutivos de recompensa (cerca de 3 dias), ele será removido do conjunto de validadores. Mas as recompensas existentes ainda podem ser reivindicadas, e os OCTs em stake seriam retirados após o período de desvinculação.
 
-### Slashing
+### Slashing (Cortar)
 
-In LPoS, if the validator node misbehaves in the network, both the validator and their delegators will be slashed, thus losing a certain percentage of the stake OCT.
+Na LPoS, se o nó validador se comportar mal na rede, tanto o validador quanto seus delegantes serão cortados, perdendo assim uma certa porcentagem de OCT em stake.
 
-To understand which case would be slashed , see the condition in the below.
+Para entender em qual caso seria cortado, veja a condição abaixo.
 
-* Condition 1: A group of validators signs more than one block at the same height;
-* Condition 2: A group of validators signs a block which includes at least one invalid tx;
-* Condition 3: A group of validators can’t react to a data availability challenge with a valid block which can justify a block header they have signed;
+* Condição 1: Um grupo de validadores assina mais de um bloco à mesma altura;
+* Condição 2: Um grupo de validadores assina um bloco que inclui pelo menos um tx inválido;
+* Condição 3: Um grupo de validadores não pode reagir a um desafio de disponibilidade de dados com um bloco válido que possa justificar um bloco header que eles assinaram;
 
-In condition 1, below formula will be used for calculating the slashing rate:
-Let x = offenders’ total staking, n = all validators’ total staking
-Slashing Rate = Min((3 * x/n)^2, 1)
+Na condição 1, a fórmula abaixo será usada para calcular a taxa de corte: Seja x = total de staking dos infratores, n = taxa total de corte de staking de todos os validadores  = Min((3 * x/n)^2, 1)
 
-In conditions 2 and 3, the offenders will be slashed by 100%.
+Nas condições 2 e 3, os infratores serão cortados em 100%.
 
-These slashed OCTs will be sent to a public treasury, from where could be returned to the validators on the decision of governance, e.g. slashing is caused by appchain runtime errors.
+Esses OCTs cortados serão enviados para um tesouro público, de onde poderão ser devolvidos aos validadores na decisão de governança, por exemplo, o corte é causado por erros de tempo de execução da appchain.

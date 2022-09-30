@@ -1,97 +1,106 @@
-## Appchain Startup
 
-![Appchain_Pipeline](../images/guides/appchain_pipeline.png)
+## Inicialização de Appchain
+
+![Appchain_Pipeline](https://docs.oct.network/assets/img/appchain_pipeline.890856b1.png)
 
 ### Appchain Status
 
-There are the below five phases:
+Há as cinco fases abaixo:
 
-1. **Registered**: The appchain will go through the Registered phase after the appchain team submits the registration with the appchain information.
-2. **Auditing**: The Octopus team will start the audit within 1-2 weeks. During the Auditing phase, the Octopus team mainly audits for two aspects:
-    * The protocol functions are usable/valuable for business purposes;
-    * Both the protocol apps and appchain node are implemented as the same with the protocol function specification file provided;
-3. **Voting**: If the appchain passes the audit, it will go through the Voting phase. This is the **critical stage** for the appchain team to request support from OCT holders. OCT holders can [vote](./voting-appchain.md) to decide whether the appchain would go through the next phase.
-4. **Booting**: The appchain with the highest vote scores will go through the Booting phase, the Octopus team will do some preparations for the appchain to go live.
-5. **Running**: After the Octopus team boots the appchain and the appchain team activates the chain with the Sudo account,  the Octopus team will execute the go-live step, the appchain will go through the Running phase.
+1. **Registrado**: A appchain passará pela fase Registrado depois que a equipe da appchain submeter o registro com as informações da appchain.
+2. **Auditoria**: O time da Octopus iniciará a auditoria dentro de 1-2 semanas. Durante a fase de Auditoria, o time Octopus realiza auditorias principalmente em dois aspectos:
+    * As funções do protocolo são utilizáveis/valorizáveis para fins comerciais;
+    * Tanto os aplicativos de protocolo como o nó da appchain são implementados como o mesmo, com o arquivo de especificação da função de protocolo fornecido;
+3. **Votação**: Se a appchain passar na auditoria, ela passará pela fase de votação. Esta é a fase crítica para que a equipe da appchain solicite o apoio dos proprietários de OCT. Esses podem [votar](https://docs.oct.network/guides/voting-appchain.html) para decidir se a appchain passará pela fase seguinte.
+4. **Inicialização**: A appchain com maior número de votos passará pela fase de inicialização, o time Octopus fará alguns preparativos para que a appchain entre em funcionamento.
+5. **Execução**: Depois que o time Octopus inicializa a appchain e ativa a cadeia com a conta Sudo, executará a etapa de "go-live" (ir para a vida), a cadeia passará pela fase de Execução.
 
-### Appchain booting process
+### Processo de inicialização da Appchain 
 
-When an appchain is ready to boot, the Octopus team moves it to the booting phase. In this section, we will list what we need to do during **Booting** phase.
 
-1. The Octopus team deploy an anchor contract and a wrapped token contract for the appchain.
+Quando uma appchain está pronta para ser iniciada, o time da Octopus a desloca para a fase de inicialização. Nesta seção, vamos listar o que precisamos fazer durante a fase de inicialização.
 
-    **Note**: By creating the wrapped token in NEAR network early, the appchain team can choose to do an IDO before the appchain launches. The appchain's tokens exist in two places, wrapped token in NEAR network and appchain native token in Appchain network. When an appchain is launched, users can use the Octopus Bridge to transfer tokens between these two places.
 
-    Also, the Octopus team will provide a snippet of the chainspec file that contains the session keys and staking information of the Octopus foundation validator nodes. For the foundation validator nodes, the default staking amount is `10000 * 10**18` OCT, and for these nodes, the default pre-allocated balance of natvie token is `10 * 10**18`, and the actual amount is determined by the appchain team.
 
-2. The Appchain team generate a human-readable chainspec file. Example command:
+1. O time da Octopus implanta um contrato de âncora e um contrato de token encapsulado para a appchain. 
 
-   ```bash
-   ./target/debug/debio build-spec --disable-default-bootnode --chain dev > debionetwork.json
-   ```
+   Nota: Ao criar o token encapsulado na rede NEAR antecipadamente, o time da appchain pode escolher fazer um IDO (Initial Dex Offering) antes do lançamento da appchain. Os tokens da appchain existem em dois lugares, token encapsulado na rede NEAR e token nativo da appchain na rede Appchain.  Quando uma appchain é lançada, os usuários podem usar a Octopus Bridge para transferir tokens entre esses dois lugares.
 
-   And then, the Octopus team will provide the snippet information file directly to you. Please carefully copy the snippet information provided into the chainspec file. Example:
+   Além disso, o time da Octopus fornecerá um trecho do arquivo chainspec que contém as chaves da sessão e informações de staking dos nós de validação da fundação Octopus. Para os nós de validação das fundações, a quantidade de staking padrão é  `10000 * 10**18` OCT e para esses nós, o saldo padrão pré-alocado do token nativo é `10 * 10**18` e o valor real é determinado pelo time da appchain.
 
-   ```bash
-   
-   // check this section, the Octopus foundation validator nodes are allocated a small balance to cover transaction fees (for example, 10 $DBIO)
-      "balances": {
-       "balances": [
-        [
-         "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
-         10000000000000000000
-        ],
-      ...
-      },
-      
-   // this can be found on mainnet/testnet website   
-   "anchorContract": "debionetwork.octopus-registry.near", 
-   "eraPayout": 13699000000000000000000,
-   
-   // check this section, these are session keys of the Octopus foundation validator nodes
-      "session": {
-       "keys": [
-        [
-         "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
-         "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
-         {
-          "babe": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
-          "grandpa": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu", 
-          "im_online": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
-          "beefy": "KW39r9CJjAVzmkf9zQ4YDb2hqfAVGdRqn53eRqyruqpxAP5YL", 
-          "octopus": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY" 
-         }
-        ],
-    ...
-       ]
-      },
-   
-   // add a sudo account for future upgrades and privileged operations.(Don’t forget to add some balance to this account as well.)
-      "sudo": {
-       "key": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
+2.  O time Appchain gera um arquivo de especificações de cadeia legível por humanos. Exemplo de comando:
+
+ 
+```bash
+./target/debug/debio build-spec --disable-default-bootnode --chain dev > debionetwork.json
+```         
+
+
+E então, o time da Octopus fornecerá o trecho do arquivo de informações diretamente a você. Por favor, copie cuidadosamente as informações do trecho fornecidas no arquivo de especificações da cadeia. Exemplo: 
+
+
+
+```bash
+/// verifique essa seção, os nós validadores da fundação do Octopus têm alocado um saldo pequeno para cobrir as taxas das transações (por exemplo, 10 $DBIO)
+   "balances": {
+    "balances": [
+     [
+      "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+      10000000000000000000
+     ],
+   ...
+   },
+
+
+// isso pode ser encontrado na mainnet/testnet do website   
+"anchorContract": "debionetwork.octopus-registry.near", 
+"eraPayout": 13699000000000000000000,
+
+// verifique essa seção, estas são as chaves da sessão dos nós de validação da fundação Octopus
+   "session": {
+    "keys": [
+     [
+      "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
+      "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
+      {
+       "babe": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
+       "grandpa": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu", 
+       "im_online": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", 
+       "beefy": "KW39r9CJjAVzmkf9zQ4YDb2hqfAVGdRqn53eRqyruqpxAP5YL", 
+       "octopus": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY" 
       }
-   ```
+     ],
+ ...
+    ]
+   },
 
-    Also, the Appchain team should generate a raw chain spec and named it as `octopus-mainnet.json` for mainnet or `octopus-testnet.json` for testnet, and then commit it to the appchain Github repo (e.g. <APPCHAIN_REPO>/resources/). Example command:
+// Acrescente uma conta sudo para futuras atualizações e operações privilegiadas. (Não se esqueça de acrescentar também algum saldo a esta conta.)
+   "sudo": {
+    "key": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
+   }
+```
 
-    ```bash
-    $ ./target/debug/debio build-spec --chain=debionetwork.json --raw  > octopus-testnet.json
-    ```
 
-    At the same time, please send the human-readable chainspec file to the Octopus team for review. 
-    
-   > **Note**: Check the appchain node, the `load_spec` function in the file `<APPCHAIN_REPO>/node/src/command.rs`, whether the following content is added to set the option `--chain` value:
-    > * for mainnet, use `octopus-mainnet`
-    > * for testnet, use `octopus-testnet`
+Além disso, o time da Appchain deve gerar uma especificação de cadeia bruta e nomeá-la como `octopus-mainnet.json` para mainnet ou `octopus-testnet.json` para testnet e então fazer commit dela para o repositório do Github da appchain (ex. &lt;APPCHAIN_REPO>/resources/). Exemplo do comando: 
 
-   The example code in the Barnacle template is as follows:
-   
-    ```Rust
-    "octopus-testnet" => Box::new(chain_spec::octopus_testnet_config()?),
-    ```    
+``` bash
+$ ./target/debug/debio build-spec --chain=debionetwork.json --raw  > octopus-testnet.json
+```
 
-3. The Octopus team use the code appchain team released to build a docker image, and then will launch a four-validators + four-bootnodes chain, deploy the API gateway, relayer and other services, and then send the wss endpoint of API gateway to the Appchain team.
+Ao mesmo tempo, por favor, envie o arquivo de especificação da cadeia, legível para humanos para o time Octopus revisar. 
+>Nota: Verifique no nó appchain, a função `load_spec` no arquivo `&lt;APPCHAIN_REPO>/node/src/command.rs`, se o seguinte conteúdo está adicionado para definir a opção valor `--chain`:
+   >* para mainnet, use `octopus-mainnet`
+   >* para testnet, use `octopus-testnet`
 
-4. The Appchain team connect the polkadotjs apps with the wss endpoint, and then use `sudo` account to activate the appchain, do the `sudo` call `octopusAppchain -> forceSetIsActivated` with `yes`.
+O código exemplo no template Barnacle fica como se segue:
 
-5. The Octopus team move the appchain to the running stage.
+
+```rust
+"octopus-testnet" => Box::new(chain_spec::octopus_testnet_config()?),
+```
+
+
+
+3. O time da  Octopus utiliza o código da equipe da appchain liberado para construir uma imagem docker e então lançará uma cadeia de quatro validadores + quatro _bootnodes_, implantará o _gateway_ API, o _relayer_ e outros serviços, e então enviará o endpoint wss do _gateway_ API para o time Appchain.
+4. O time da Appchain conecta os aplicativos polkadotjs com endpoint wss, e então usa a conta `sudo` para ativar a appchain, faz a chamada `sudo` `octopusAppchain -> forceSetIsActivated` com `yes`.
+5. O time Octopus move a appchain para o estágio de execução.

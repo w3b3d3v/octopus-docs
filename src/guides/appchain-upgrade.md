@@ -1,24 +1,33 @@
-## Appchain Upgrade
+## Atualização de Appchain
 
-The upgrade of the Appchain includes two cases:
-* Runtime upgrade
-* Node upgrade
+A atualização da Appchain inclui dois casos:
 
-### Runtime upgrade
 
-If only the runtime code is modified, the Appchain team needs to complete the runtime upgrade according to the following process:
 
-1. The Appchain team releases a new version and a new runtime wasm file;
-2. The Appchain team decides the date of the runtime upgrade and informs the Octopus Network team on its Discord channel;
-3. The Octopus Network team will complete the runtime upgrade before enabling on-chain governance;
+* Atualização do tempo de execução
+* Atualização do nó
 
-### Node upgrade
+### Atualização do Tempo de Execução
 
-If you modify the code outside the runtime, or upgrade the Substrate version of Octopus Network (e.g: v0.9.13 to v0.9.18), the Appchain team needs to complete the node upgrade according to the following process:
 
-1. The Appchain team releases a new version, as well as the binary files of the new node;
-2. The Appchain team decides the date of the node upgrade and informs the Octopus Network team on its Discord channel;
-3. The Octopus Network team upgrades the Appchain nodes operated by the Octopus Foundation;
-4. The Octopus Network team notifies the Appchain validators of the Octopus community to upgrade their Appchain nodes;
+Se apenas o código de tempo de execução for modificado, o time da Appchain precisa concluir a atualização do tempo de execução de acordo com o seguinte processo:
 
-**Note**: Node upgrade is the same as the runtime upgrade, the `spec_version` in `runtime/src/lib.rs` must also be updated.
+
+
+1. O time da Appchain lança uma nova versão e um novo arquivo wasm de tempo de execução;
+2. O time da Appchain decide a data da atualização do tempo de execução e informa à equipe da Rede Octopus no seu canal Discord;
+3. O time da Rede Octopus concluirá a atualização do tempo de execução antes de permitir a governança on-chain;
+
+### Atualização do Nó
+
+
+Se você modificar o código fora do tempo de execução, ou atualizar a versão Substrate da Rede Octopus (por exemplo: v0.9.13 para v0.9.18), o time Appchain precisa concluir a atualização do nó de acordo com o seguinte processo:
+
+
+
+1. O time da Appchain lança uma nova versão, assim como os arquivos binários do novo nó;
+2. O time da Appchain decide a data da atualização do nó e informa à equipe da Rede Octopus no seu canal Discord;
+3. O time da Rede Octopus atualiza os nós da Appchain operados pela Fundação Octopus;
+4. O time da Rede Octopus notifica os validadores de Appchain da comunidade Octopus para atualizar seus nós da Appchain;
+
+Nota: A atualização do nó é a mesma que a atualização do tempo de execução. A `spec_version` na `runtime/src/lib.rs` também deve ser atualizada.

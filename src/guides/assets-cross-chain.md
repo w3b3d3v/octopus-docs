@@ -1,69 +1,86 @@
-## Assets Cross-chain
 
-The Octopus Network provides out-of-the-box cross-chain functions for Appchain, including to transfer main chain (NEAR) stablecoin and to Appchain native asset.
-* Transfer Appchain Token to Mainchain
-* Transfer Mainchain Token to Appchain
+## Ativos Cross-chain
 
-## Transfer Appchain Token to Mainchain
+A Octopus Network fornece funções de cross-chain de uso imediato para Appchain, incluindo a transferência de stablecoin da cadeia principal (NEAR) e também, para ativo nativo da Appchain.
 
-This guide describes how to transfer Appchain's native token between Appchains and mainchain.
+* Transferir Token da Appchain para a Mainchain
+* Transferir Token da Mainchain para a Appchain
 
-We will cover the 3 topics below, employing Appchain "Barnacle" and its native token "BAR" as examples:
+## Transferir Token da Appchain para a Mainchain
 
-- Create wrapper token on Near
-- Transfer Appchain's native token from Appchain to mainchain
-- Redeem Appchain's native token from mainchain to Appchain
 
-### The limitation for the cross-chain transfer
+Este guia descreve como transferir o token nativo Appchain entre Appchains e Mainchain.
 
-- NEAR -> Appchain: the total market value of all non-appchain native tokens is not higher than 1/3 of the total market value of the OCT token staking in the anchor contract of the appchain.
+Cobriremos os 3 tópicos abaixo, empregando "Barnacle" da Appchain e seu token nativo "BAR" como exemplos:
 
-### Create Wrapper Token on NEAR
 
-After an Appchain goes live, if the Appchain users want to use the Appchain's native token on the mainchain, the contract of the corresponding wrapper token, a NEP-141 asset, must be deployed on the mainchain beforehand.
 
-Appchain teams may refer to the [sample contract](https://github.com/octopus-network/appchain-native-token) as a guide to set up a wrapper token on the mainchain.
+* Criar token wrapper na Near
+* Transferir token nativo  Appchain da  Appchain para a mainchain
+* Resgatar token nativo  Appchain da  mainchain para a Appchain
 
-### Transfer Appchain's native token from Appchain to mainchain
+### Limitação da transferência cross-chain
 
-On the [Octopus testnet bridge](https://testnet.oct.network/bridge), we select Barnacle as the Appchain in the cross-chain transfer.
+* NEAR -> Appchain: o valor total de mercado de todos os tokens nativos não pertencentes à appchain não é superior a 1/3 do valor total de  mercado de staking do token OCT que está no contrato âncora da cadeia.
 
-![BarnacleAsAppchain](../images/guides/BarnacleAsAppchain.png)
+### Criar Token Wrapper na NEAR
 
-Select the Appchain's account as the sender.
 
-![AppchainAccAsSender](../images/guides/AppchainAccAsSender.png)
+Após a entrada em funcionamento de uma Appchain, se os usuários da Appchain quiserem usar o token nativo Appchain na cadeia principal, o contrato do token wrapper correspondente, um ativo NEP-141, deve ser implantado na mainchain com antecedência.
 
-> Note: If your Appchain account doesn't have a balance of BAR, You may transfer some BAR from Appchain's built-in account ALICE to your account via Polkadot.js.
+Os times da Appchain podem consultar o [sample contract ](https://github.com/octopus-network/appchain-native-token)como um guia para configurar um token wrapper na mainchain.
 
-![AppchainAliceSend](../images/guides/AppchainAliceSend.png)
 
-Set the NEAR account hellocto.testnet as the receiver and fire the transaction.
+### Transferir token nativo Appchain da Appchain para a mainchain
 
-![FireAppNativeToMainchain](../images/guides/FireAppNativeToMainchain.png)
+Em [Octopus testnet bridge](https://testnet.oct.network/bridge), selecionamos o Barnacle como a Appchain na transferência cross-chain.
 
-### Redeem Appchain's native token from mainchain to Appchain
+![BarnacleAsAppchain](https://docs.oct.network/assets/img/BarnacleAsAppchain.b943cb02.png)
 
-Following the previous operation, we switch the sender and receiver to redeem the Appchain's native token back to the Appchain.
 
-![RedeemAppNativeToAppchain](../images/guides/RedeemAppNativeToAppchain.png)
+Selecione a conta da Appchain como remetente.
 
-## Transfer Mainchain Token to Appchain
 
-Octopus Network provides out-of-the-box cross-chain functions for Appchains, including mainchain (NEAR) stablecoin transfer and Appchain native asset transfer.
+![AppchainAccAsSender](https://docs.oct.network/assets/img/AppchainAccAsSender.d1946366.png)
 
-This guide describes how to transfer the mainchain's stablecoin through Octopus' built-in cross-chain function.
 
-- Create stablecoin's wrapper asset on Appchain
-- Transfer stablecoin to Appchain
-- Transfer stablecoin's wrapper asset to mainchain from Appchain
+> Nota: Se sua conta Appchain não tiver um saldo de BAR, você pode transferir algum BAR da conta integrada ALICE na Appchain para sua conta via Polkadot.js.
 
-### Create Wrapper Assets
+![AppchainAliceSend](https://docs.oct.network/assets/img/AppchainAliceSend.c7085141.png)
 
-After the Appchain goes live, if Appchain users want to use a stable coin on the mainchain, such as USDC, we need to create the corresponding wrapper asset on the Appchain first. Usually, this step is done through the governance of the Appchain. However, we use `sudo` instead to demo.
+Configure a conta NEAR hellocto.testnet como destinatária e queime a transação.
 
-- Connect to the Appchain on Polkadot JS.
-- Set the custom type, select `Settings -> Developer`, add the following JSON content and save it:
+![FireAppNativeToMainchain](https://docs.oct.network/assets/img/FireAppNativeToMainchain.ca1a733f.png)
+
+
+### Regatar o token nativo Appchain da mainchain para a Appchain
+
+Seguindo a operação anterior, trocamos o remetente e o destinatário para resgatar o token nativo Appchain de volta para a Appchain.
+
+![RedeemAppNativeToAppchain](https://docs.oct.network/assets/img/RedeemAppNativeToAppchain.cf0076e1.png)
+
+## Transferir Token da Mainchain para a Appchain
+
+A Octopus Network oferece funções cross-chain de uso imediato para Appchains, incluindo a transferência de stablecoins da mainchain (NEAR) e a transferência de ativos nativos Appchain.
+
+Este guia descreve como transferir stablecoin da mainchain por meio da função cross-chain incorporada da Octopus.
+
+
+
+* Criar um ativo wrapper na Appchain
+* Transferir stablecoin para a Appchain
+* Transferir ativo wrapper de stablecoin para a mainchain da Appchain
+
+### Criar Ativos Wrapper
+
+
+Após a entrada em funcionamento da Appchain, se os usuários da Appchain quiserem usar uma stablecoin na mainchain, como USDC, precisamos criar primeiro o ativo wrapper correspondente na Appchain. Normalmente, esta etapa é feita por meio da governança da Appchain. No entanto, usamos `sudo`, em vez disso, para a demonstração.
+
+
+
+* Conecte-se à Appchain com Polkadot JS.
+* Definir o tipo personalizado, selecionar `Settings -> Developer`, adicionar o seguinte conteúdo JSON e salvar:
+
 
 ```json
 {
@@ -95,28 +112,35 @@ After the Appchain goes live, if Appchain users want to use a stable coin on the
 }
 ```
 
-![custom_type](../images/guides/custom_type.jpg)
+![custom_type](https://docs.oct.network/assets/img/custom_type.aa93bd9a.jpg)
 
-- Select `Develper -> Sudo -> assets -> forceCreate` to issue an asset with asset ID 0:
 
-![Create Asset](../images/guides/create_asset.png)
 
-- Check the chain status if the asset was issued correctly, where Asset 0 corresponds to the stable coin USDC on the mainchain (we have this mapping preset in ChainSpec, `usdc.testnet`).
+* Selecione  `Developer -> Sudo -> assets -> forceCreate` para emitir um ativo com o ID 0:
 
-### Transfer Mainchain to Appchain
+![Create Asset](https://docs.oct.network/assets/img/create_asset.319ef267.png)
 
-On the [cross-chain bridge](https://testnet.oct.network/bridge) of Octopus Test Network, we select the Appchain `easydeal-demo` which will receive the stablecoin USDC transferred from the mainchain and the account `oct.testnet` as the sender; The recipient is an SS58 address of an Appchain account, which will receive the 2 USDC after transferred.
 
-![Transfer USDC assets](../images/guides/transfer_usdc.jpg)
+* Verifique o status da cadeia, se o ativo foi emitido corretamente, onde o Ativo 0 corresponde à stablecoin USDC na mainchain (temos este mapeamento pré-definido em ChainSpec, `usdc.testnet`).
 
-A few minutes later, the transfer transaction is verified by the Appchain validators, then the corresponding wrapped assets are minted for the recipient. We can check the chain state to verify if the assets are transferred correctly by selecting `Chain State -> Storage -> assets -> account` and the balance should be 2,000,000 units(note: the decimal place is 6).
+### Transfeir a Mainchain para a  Appchain
 
-![Map Asset Balance](../images/guides/appchain_balance.jpg)
 
-### Transfer Back to the Mainchain from Appchain
+Em [cross-chain bridge ](https://testnet.oct.network/bridge)da Octopus Test Network, selecionamos a Appchain `easydeal-demo` que vai receber a stablecoin USDC transferida da mainchain e a conta `oct.testnet` como remetente; o destinatário é um endereço SS58 de uma conta Appchain, que vai receber os 2 USDC depois de transferidos.
 
-Following to the previous operation, we switch the sender and receiver accounts to transfer the stablecoin asset back.
+![Transfer USDC assets](https://docs.oct.network/assets/img/transfer_usdc.c66a72df.jpg)
 
-![Redeem USDC assets](../images/guides/redeem_usdc.jpg)
 
-The asset balance will be updated after the transfer back event is verified by Octopus Relay on the mainchain.
+Alguns minutos depois, a transação de transferência é verificada pelos validadores da Appchain e, em seguida, os ativos encapsulados correspondentes são cunhados para o destinatário. Podemos verificar o estado da cadeia para confirmar se os ativos são transferidos corretamente, selecionando `Chain State -> Storage -> assets -> account` e o saldo deve ser 2,000,000 unidades (nota: a ordem de grandeza é 6).
+
+![Map Asset Balance](https://docs.oct.network/assets/img/appchain_balance.7c163d05.jpg)
+
+
+### Transferir de Volta para a Mainchain da Appchain
+
+Seguindo a operação anterior, trocamos as contas do remetente e do receptor para transferir de volta o ativo de stablecoin.
+
+![Redeem USDC assets](https://docs.oct.network/assets/img/redeem_usdc.3fc5331e.jpg)
+
+
+O saldo do ativo será atualizado após o evento de transferência de volta ser verificado pelo Octopus Relay na mainchain.

@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Octopus Documentation",
+  title: "Documentação Octpus",
   theme: "reco",
   plugins: [["@dovyp/vuepress-plugin-clipboard-copy", true]],
 
@@ -19,12 +19,6 @@ module.exports = {
 
   locales: {
     "/": {
-      lang: "en-US",
-    },
-    "/cn/": {
-      lang: "zh-CN",
-    },
-    "/pt/": {
       title: "Documentação Octopus",
       lang: "pt-BR",
       description: "WEB3DEV",
@@ -43,34 +37,6 @@ module.exports = {
 
     locales: {
       "/": {
-        label: "English",
-        nav: [
-          {
-            text: "Official Home",
-            link: "https://oct.network/",
-            target: "_self",
-            rel: "",
-            icon: "reco-home",
-          },
-          { text: "Index", link: "/" },
-        ],
-        sidebar: require("./config/sidebar-en"),
-      },
-      "/cn/": {
-        label: "简体中文",
-        nav: [
-          {
-            text: "主页",
-            link: "https://oct.network/",
-            target: "_self",
-            rel: "",
-            icon: "reco-home",
-          },
-          { text: "首页", link: "/cn/", icon: "" },
-        ],
-        sidebar: require("./config/sidebar-zh"),
-      },
-      "/pt/": {
         label: "Português",
         nav: [
           {
@@ -80,7 +46,7 @@ module.exports = {
             rel: "",
             icon: "reco-home",
           },
-          { text: "Índice", link: "/pt/", icon: "" },
+          { text: "Índice", link: "/", icon: "" },
         ],
         sidebar: require("./config/sidebar-pt"),
       },
